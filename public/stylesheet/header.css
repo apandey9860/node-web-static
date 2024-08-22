@@ -1,0 +1,109 @@
+/*---------------------------------------
+    MENU              
+-----------------------------------------*/
+
+.custom-navbar {
+    border: none;
+    margin-bottom: 0;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    background-color: coral;
+}
+
+.custom-navbar .navbar-brand-img {
+    letter-spacing: -1px;
+    width: 120px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing between icon and text */
+}
+
+/* Navbar Brand Styling */
+.custom-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  background-image: url('../images/green_logo-01-removebg.png'); /* Ensure the path is correct */
+  background-size: contain; /* Ensures the background image scales properly */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  color: #ffffff; /* Sets text color to white (if text is present) */
+  font-size: 25px; /* Font size for brand text */
+  font-weight: 500; /* Medium weight for font */
+  letter-spacing: -1px; /* Adjusts letter spacing */
+  text-decoration: none; /* Ensures no underlines on the text */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  height: 80px; /* Adjust height as needed to fit the logo */
+  min-width: 180px;
+  width: auto; /* Adjust width as needed to fit the logo */
+  /* margin-left: calc(-20%); */
+}
+
+.custom-navbar .navbar-brand img {
+  display: block; /* Hide image if using background image */
+}
+
+.top-nav-collapse {
+  background: #ffffff;
+}
+
+.custom-navbar .navbar-nav {
+  margin-left: 6em;
+  margin-top: 20px;
+}
+
+.custom-navbar .nav li a {
+  font-size: 16px;
+  font-weight: normal;
+  color: #f0f0f0;
+  padding-right: 22px;
+  padding-left: 22px;
+}
+
+.custom-navbar .nav li a:hover {
+  background: transparent;
+  color: #29ca8e;
+}
+
+.custom-navbar .navbar-nav > li > a:hover,
+.custom-navbar .navbar-nav > li > a:focus {
+  background-color: transparent;
+}
+
+.custom-navbar .nav li.active > a {
+  background-color: transparent;
+  color: #29ca8e;
+}
+
+.custom-navbar .navbar-toggle {
+  border: none;
+  padding-top: 10px;
+  /* left: calc(100% - 140px); */
+  margin-top: 20px;
+}
+
+.custom-navbar .navbar-toggle {
+  background-color: transparent;
+}
+
+.custom-navbar .navbar-toggle .icon-bar {
+  background: #29ca8e;
+  border-color: transparent;
+}
+
+/* Style for the navbar when scrolled */
+.custom-navbar.scrolled {
+  background-color: #333333; /* Change to your desired color */
+  padding: 10px 0; /* Adjust padding if needed */
+}
+
+.custom-navbar.scrolled .navbar-brand img {
+  width: 100px; /* Adjust width if needed */
+}
+
+.custom-navbar.scrolled .nav li a {
+  color: #ffffff; /* Adjust text color if needed */
+}
+
+.custom-navbar.scrolled .nav li a:hover {
+  color: #29ca8e; /* Adjust hover color if needed */
+}

@@ -1,0 +1,72 @@
+/*---------------------------------------
+   FOOTER              
+-----------------------------------------*/
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0; /* Adjust padding for top and bottom */
+    position: sticky;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  footer .container {
+    max-width: 1200px; /* Set a maximum width for better alignment */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  footer .row {
+    display: flex;
+    justify-content: center; /* Center the row contents */
+    flex-wrap: wrap;
+  }
+  
+  footer .copyright-text {
+    display: flex;
+    justify-content: space-between; /* Space out the email and copyright/social icon sections */
+    align-items: center; /* Align items vertically in the center */
+    text-align: center; /* Center text within this container */
+  }
+  
+  footer .email-address p {
+    margin: 0;
+  }
+  
+  footer .email-address a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  footer .email-address a:hover {
+    color: #f33f3f; /* Change color on hover */
+  }
+  
+  footer .social-icon {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the social icons */
+  }
+  
+  footer .social-icon li {
+    margin: 0 10px; /* Spacing between social icons */
+  }
+  
+  footer .social-icon a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  footer .social-icon a:hover {
+    color: #f33f3f; /* Change color on hover */
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 14px; /* Set font size for better readability */
+  }
