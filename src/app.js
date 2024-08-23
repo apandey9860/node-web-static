@@ -12,20 +12,35 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../public')));
-// Serve Static Files
-app.use('/css', express.static(path.join(__dirname, '../public/stylesheet')));
+
+// Serve additional static directories
+app.use('/fonts', express.static(path.join(__dirname, '../public/fonts')));
+app.use('/css', express.static(path.join(__dirname, '../public/css')));
 app.use('/images', express.static(path.join(__dirname, '../public/images')));
 app.use('/videos', express.static(path.join(__dirname, '../public/videos')));
-app.use('/views', express.static(path.join(__dirname, '../public/views')));
+app.use('/videos', express.static(path.join(__dirname, '../public/viwes')));
+
+// Serve static JS files from a specific directory
 app.use('/scripts', express.static(path.join(__dirname, '../src')));
 app.use('/components', express.static(path.join(__dirname, '../src/components')));
 app.use('/service', express.static(path.join(__dirname, '../src/services')));
 app.use('/utils', express.static(path.join(__dirname, '../src/utils')));
 
-//Serve Static Pages
-app.use('/products', express.static(path.join(__dirname, '../public/web/products.html')));
-app.use('/services', express.static(path.join(__dirname, '../public/web/services.html')));
+// Serve static HTML pages
+app.get('/products', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/products.html'));
+});
+app.get('/services', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/services.html'));
+});
 
+// Handle dynamic product pages
+app.get('/products/:productName', (req, res) => {
+  const productName = req.params.productName;
+  res.params.productName = productName;
+  // Load content based on `productName` from a database or file
+  res.sendFile(path.join(__dirname, '../public/web/product.html'));
+});
 
 // Use router
 app.use('/', router);
