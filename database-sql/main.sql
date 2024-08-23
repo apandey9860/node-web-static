@@ -45,25 +45,12 @@ CREATE DATABASE "EERO"
 
 -- Connect to the newly created database
 \c "EERO" admin;
---tooshort
 
-CREATE SCHEMA PERSON
-    AUTHORIZATION admin;
-
-CREATE SCHEMA TRADE
-    AUTHORIZATION admin;
-
-CREATE SCHEMA REPAIR
-    AUTHORIZATION admin;  
-
-CREATE SCHEMA MISC
-    AUTHORIZATION admin;    
-
-CREATE SCHEMA REPAIR
-    AUTHORIZATION admin;  
-
-CREATE SCHEMA INVENTORY
-    AUTHORIZATION admin;  
+CREATE SCHEMA PERSON AUTHORIZATION admin;
+CREATE SCHEMA TRADE AUTHORIZATION admin;
+CREATE SCHEMA REPAIR AUTHORIZATION admin;
+CREATE SCHEMA MISC AUTHORIZATION admin;
+CREATE SCHEMA INVENTORY AUTHORIZATION admin;
 
 DROP SCHEMA public CASCADE;
 
@@ -74,7 +61,7 @@ CREATE TABLE PERSON.USER_ACCESS (
     USER_ACCESS_DESCRIPTION VARCHAR(200)
 );
 
-INSERT INTO PERSON.USER_ACCESS (USER_ACCESS_LEVEL, USER_ACCESS_DESCRIPTION) VALUES
+INSERT INTO PERSON.USER_ACCESS (USER_ACCESS_ID,USER_ACCESS_LEVEL, USER_ACCESS_DESCRIPTION) VALUES
     (1, 'Viewer', 'Can View Website'),
     (2, 'Customer', 'Can use buy or repair services'),
     (3, 'Admin','All privilege and can create other users');
@@ -117,6 +104,7 @@ CREATE TABLE TRADE.T_PRODUCT (
     T_PRODUCT_ID SERIAL PRIMARY KEY,
     T_PRODUCT_NAME VARCHAR(200) NOT NULL,
     T_PRODUCT_PRICE VARCHAR(100),
+    T_PRODUCT_SHORT_DESC TEXT,
     T_PRODUCT_DESC TEXT,
     T_CATEGORY_ID INT,
     CREATION_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -140,7 +128,8 @@ CREATE TABLE TRADE.T_PROD_TIMELINE (
     T_PROD_TLINE_ID SERIAL PRIMARY KEY,
     T_PROD_TLINE_INTERVAL INTERVAL,
     T_PROD_TLINE_FINISH TIMESTAMP,
-    T_PROD_TLINE_DELIVERY INT,
+    T_PROD_TLINE_DELIVERY TIMESTAMP,
+    T_PROD_DEL_STATUS BOOLEAN,
     T_PRODUCT_ID INT,
     USER_ID INT NOT NULL,
     CREATION_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -181,8 +170,10 @@ CREATE TABLE REPAIR.R_PRODUCT (
     R_PRODUCT_ID SERIAL PRIMARY KEY,
     R_PRODUCT_NAME VARCHAR(200) NOT NULL,
     R_PRODUCT_PRICE VARCHAR(100),
+    R_PRODUCT_SHORT_DESC TEXT,
     R_PRODUCT_DESC TEXT,
     R_CATEGORY_ID INT,
+    R_REPAIR_STATUS BOOLEAN,
     CREATION_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     LAST_UPDATED_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (R_CATEGORY_ID) REFERENCES REPAIR.R_CATEGORY(R_CATEGORY_ID)
@@ -256,20 +247,6 @@ CREATE TRIGGER users_last_updated_trigger
 BEFORE UPDATE ON PERSON.USERS
 FOR EACH ROW EXECUTE FUNCTION PERSON.update_last_updated_date();
 
--- Function to update LAST_UPDATED_DATE before any row in MISC.EVENT_LOG table is updated.
-CREATE OR REPLACE FUNCTION MISC.update_last_updated_date()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.LAST_UPDATED_DATE = CURRENT_TIMESTAMP;
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Trigger to call the update_last_updated_date function before updating any row in MISC.EVENT_LOG table.
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON MISC.EVENT_LOG
-FOR EACH ROW EXECUTE FUNCTION MISC.update_last_updated_date();
-
 -- Function to update LAST_UPDATED_DATE before any row in TRADE tables is updated.
 CREATE OR REPLACE FUNCTION TRADE.update_last_updated_date()
 RETURNS TRIGGER AS $$
@@ -280,24 +257,20 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Triggers to call the update_last_updated_date function before updating rows in various TRADE tables.
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER trade_category_last_updated_trigger
 BEFORE UPDATE ON TRADE.T_CATEGORY
 FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
 
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER trade_product_last_updated_trigger
 BEFORE UPDATE ON TRADE.T_PRODUCT
 FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
 
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER trade_prod_pic_last_updated_trigger
 BEFORE UPDATE ON TRADE.T_PROD_PIC
 FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
 
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER trade_prod_timeline_last_updated_trigger
 BEFORE UPDATE ON TRADE.T_PROD_TIMELINE
-FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON TRADE.T_HISTORY
 FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
 
 -- Function to update LAST_UPDATED_DATE before any row in REPAIR tables is updated.
@@ -310,26 +283,19 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Triggers to call the update_last_updated_date function before updating rows in various REPAIR tables.
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER repair_category_last_updated_trigger
 BEFORE UPDATE ON REPAIR.R_CATEGORY
 FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
 
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER repair_product_last_updated_trigger
 BEFORE UPDATE ON REPAIR.R_PRODUCT
 FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
 
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER repair_prod_pic_last_updated_trigger
 BEFORE UPDATE ON REPAIR.R_PROD_PIC
 FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
 
-CREATE TRIGGER users_last_updated_trigger
+CREATE TRIGGER repair_prod_timeline_last_updated_trigger
 BEFORE UPDATE ON REPAIR.R_PROD_TIMELINE
 FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
 
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_PROD_VIEW
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_HISTORY
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();

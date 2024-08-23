@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+	<title>Register Page</title>
+    <link rel="stylesheet" href="/CSS/register.min.css">
+</head>
+<body>
+    <div class="popup-container" id="popupContainer">
+        <div id ="register-box" class="register-box">
+            <h2>Register</h2>
+            <form id="registerForm" action="#">
+                <div class="user-box">                
+                    <label for="username">Username</label>
+                    <input id="username" type="text" name="username" required="" title="Enter your username" placeholder="Username">
+                </div>
+                <div class="user-box">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" required="" title="Enter your email address" placeholder="Email">                
+                </div>
+                <div class="user-box">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" required="" title="Enter your password" placeholder="Password">                
+                </div>
+                <div class="user-box">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input id="confirm_password" type="password" name="confirm_password" required="" title="Confirm your password" placeholder="Confirm Password">                
+                </div>
+                <input type="submit"></input>
+            </form>
+            <div class="login-link">
+                Already have an account?<a href="login">Login here</a>
+            </div>
+        </div>
+    </div>
+    <script src="/services/registerVerify.js"></script>
+</body>
+</html>

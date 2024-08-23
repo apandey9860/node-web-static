@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const router = require('./routes/router');
-
+const bodyParser = require('body-parser');
+const userRouter = require('./userRouter');
+const tradeRouter = require('./tradeRouter');
+const repairRouter = require('./repairRouter');
 const app = express();
 
 // Middleware
@@ -33,6 +35,12 @@ app.get('/products', (req, res) => {
 app.get('/services', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/services.html'));
 });
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/login.html'));
+});
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/register.html'));
+});
 
 // Handle dynamic product pages
 app.get('/products/:productName', (req, res) => {
@@ -43,7 +51,9 @@ app.get('/products/:productName', (req, res) => {
 });
 
 // Use router
-app.use('/', router);
+app.use('/user', userRouter);
+app.use('/trade', tradeRouter);
+app.use('/repair', repairRouter);
 
 // Fallback route (optional)
 app.get('*', (req, res) => {
