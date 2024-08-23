@@ -11,6 +11,7 @@ router.get('/test', (req, res) => {
 
 // Route to create a new user
 router.post('/create', async (req, res) => {
+  console.log("create");
   const { user_name, user_fullname, user_password, user_phone, user_email, user_address, user_access_id } = req.body;
   try {
       const result = await pool.query(
@@ -19,6 +20,7 @@ router.post('/create', async (req, res) => {
       );
       res.status(200).send('User created successfully');
   } catch (err) {
+      console.log(err.message);
       res.status(400).send(`Error creating user: ${err.message}`);
   }
 });
@@ -53,13 +55,17 @@ router.delete('/delete', async (req, res) => {
 
 // Route to verify user credentials
 router.post('/verify', async (req, res) => {
+    console.log("verify");
   const { user_name, user_password } = req.body;
+  
+  console.log(user_name, user_password);
   try {
       const result = await pool.query(
-          `CALL PERSON.verify_user_credentials($1, $2)`,
+          `SELECT PERSON.verify_user_credentials($1, $2)`,
           [user_name, user_password]
       );
-      if (result.rows[0]) {
+      if (result.rows[0]['verify_user_credentials']) {
+        console.log('User verified successfully');
           res.status(200).send('User verified successfully');
       } else {
           res.status(401).send('Invalid credentials');

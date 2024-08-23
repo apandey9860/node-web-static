@@ -80,7 +80,7 @@ CALL PERSON.delete_user(3, 'newpassword123');
 
 
 CREATE OR REPLACE FUNCTION PERSON.verify_user_credentials(
-    p_user_id INT,
+    p_user_name INT,
     p_password TEXT
 )
 RETURNS BOOLEAN
@@ -95,4 +95,4 @@ END;
 $$;
 
 -- Test Case
-SELECT PERSON.verify_user_credentials(2, 'newpassword123');
+SELECT PERSON.verify_user_credentials('dataEntry', '12345');
