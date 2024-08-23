@@ -233,6 +233,17 @@ CREATE TABLE REPAIR.R_HISTORY (
     LAST_UPDATED_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Create a table to feedback associated with user 
+CREATE TABLE MISC.FEEDBACK (
+    FEEDBACK_ID SERIAL PRIMARY KEY,
+    FEEDBACK_TEXT TEXT,
+    FEEDBACK_IMG VARCHAR(200),
+    USER_ID INT,
+    CREATION_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    LAST_UPDATED_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (USER_ID) REFERENCES PERSON.USERS(USER_ID)
+);
+
 -- Function to update LAST_UPDATED_DATE before any row in PERSON.USERS table is updated.
 CREATE OR REPLACE FUNCTION PERSON.update_last_updated_date()
 RETURNS TRIGGER AS $$
@@ -246,6 +257,20 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER users_last_updated_trigger
 BEFORE UPDATE ON PERSON.USERS
 FOR EACH ROW EXECUTE FUNCTION PERSON.update_last_updated_date();
+
+-- Function to update LAST_UPDATED_DATE before any row in MISC.FEEDBACK table is updated.
+CREATE OR REPLACE FUNCTION MISC.update_last_updated_date()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.LAST_UPDATED_DATE = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger to call the update_last_updated_date function before updating any row in MISC.FEEDBACK table.
+CREATE TRIGGER users_last_updated_trigger
+BEFORE UPDATE ON MISC.FEEDBACK
+FOR EACH ROW EXECUTE FUNCTION MISC.update_last_updated_date();
 
 -- Function to update LAST_UPDATED_DATE before any row in TRADE tables is updated.
 CREATE OR REPLACE FUNCTION TRADE.update_last_updated_date()

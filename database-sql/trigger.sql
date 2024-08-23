@@ -12,6 +12,20 @@ CREATE TRIGGER users_last_updated_trigger
 BEFORE UPDATE ON PERSON.USERS
 FOR EACH ROW EXECUTE FUNCTION PERSON.update_last_updated_date();
 
+-- Function to update LAST_UPDATED_DATE before any row in MISC.FEEDBACK table is updated.
+CREATE OR REPLACE FUNCTION MISC.update_last_updated_date()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.LAST_UPDATED_DATE = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger to call the update_last_updated_date function before updating any row in MISC.FEEDBACK table.
+CREATE TRIGGER users_last_updated_trigger
+BEFORE UPDATE ON MISC.FEEDBACK
+FOR EACH ROW EXECUTE FUNCTION MISC.update_last_updated_date();
+
 -- Function to update LAST_UPDATED_DATE before any row in MISC.EVENT_LOG table is updated.
 CREATE OR REPLACE FUNCTION MISC.update_last_updated_date()
 RETURNS TRIGGER AS $$
