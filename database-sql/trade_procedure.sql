@@ -57,7 +57,7 @@ CREATE OR REPLACE PROCEDURE TRADE.add_trade_product(
     IN p_product_desc TEXT,
     IN p_category_id INT,
     IN p_prod_pic_name VARCHAR(200),
-    IN p_prod_pic_data BYTEA
+    IN p_prod_pic_data VARCHAR(100)
 )
 LANGUAGE plpgsql
 AS $$
@@ -74,7 +74,7 @@ END;
 $$;
 
 -- Test Case
-CALL TRADE.add_trade_product('Smartphone', '500', 'Latest model', 'High-end smartphone', 2, 'phone.jpg', bytea(''));
+CALL TRADE.add_trade_product('Smartphone', '500', 'Latest model', 'High-end smartphone', 2, 'phone.jpg', 'phone.jpg');
 
 
 CREATE OR REPLACE PROCEDURE TRADE.update_trade_product(
@@ -85,7 +85,7 @@ CREATE OR REPLACE PROCEDURE TRADE.update_trade_product(
     IN p_product_desc TEXT,
     IN p_category_id INT,
     IN p_prod_pic_name VARCHAR(200),
-    IN p_prod_pic_data BYTEA
+    IN p_prod_pic_data VARCHAR(100)
 )
 LANGUAGE plpgsql
 AS $$
@@ -108,7 +108,7 @@ END;
 $$;
 
 -- Test Case
-CALL TRADE.update_trade_product(1, 'Updated Smartphone', '450', 'Updated model', 'Updated description', 1, 'updated_phone.jpg', bytea('\x89504e47'));
+CALL TRADE.update_trade_product(1, 'Updated Smartphone', '450', 'Updated model', 'Updated description', 1, 'updated_phone.jpg', 'phone.jpg');
 
 
 CREATE OR REPLACE PROCEDURE TRADE.delete_trade_product(
