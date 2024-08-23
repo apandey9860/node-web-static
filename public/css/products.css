@@ -1,0 +1,93 @@
+/*---------------------------------------
+    MAIN          
+-----------------------------------------*/
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0 0 0;
+    padding: 100px 0 0 0;
+    background-color: teal;
+    justify-content: center;
+}
+
+#main h1 {
+    font-size: 4rem;
+}
+
+/*---------------------------------------
+    FEATURE DIV          
+-----------------------------------------*/
+#featureDiv {
+    margin-bottom: 50px;
+}
+
+/*---------------------------------------
+    CONTENT          
+-----------------------------------------*/
+#content {
+    margin-bottom: 20px;
+    display: flex;
+    background-color: ivory;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+}
+
+/*---------------------------------------
+    FILTERS          
+-----------------------------------------*/
+#filters {
+    flex: 0 0 15%; /* Takes up 15% of the available space */
+    display: flex;
+    flex-direction: column; /* Stack filters vertically */
+    justify-content: flex-start; /* Align filters to the top */
+    padding: 20px;
+    background-color: #cadbec; /* Optional: light background color for filters */
+    border-radius: 5px;
+}
+
+#filters .col-12{
+    padding: 0 20px;
+}
+
+#filters h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------------------------------
+    PRODUCTS          
+-----------------------------------------*/
+#products {
+    flex: 1; /* Takes up the remaining space */
+    display: flex;
+    flex-direction: column; /* Stack product rows vertically */
+    padding:  0 20px;
+}
+
+/*---------------------------------------
+    CARDS          
+-----------------------------------------*/
+.card {
+    background-color: rgb(169, 187, 202);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    width: 100%; /* Ensure card takes up full width of its container */
+    /* Add more styles here if needed */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Enhanced shadow effect on hover */
+}
+
+.card img {
+    object-fit: contain;
+    width: 100%; /* Adjust this to fit your design needs */
+    border-radius: 4px;
+}
+
+.card .btn-primary {
+    align-self: flex-end;
+}

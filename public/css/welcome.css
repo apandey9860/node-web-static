@@ -1,0 +1,14 @@
+.welcome {
+    font-size: 4rem;
+    font-weight: bold;
+    color: coral;
+    font-family: 'Roboto';
+    opacity: 0; /* Start invisible */
+    transform: translateY(-150px); /* Start above the viewport */
+}
+
+.welcome.show {
+    opacity: 1;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(0); /* End at the center */
+}
