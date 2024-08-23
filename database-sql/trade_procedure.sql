@@ -126,3 +126,100 @@ $$;
 CALL TRADE.delete_trade_product(1);
 
 
+-- Procedure to add a new product timeline record
+CREATE OR REPLACE PROCEDURE TRADE.add_prod_timeline(
+    IN p_prod_tline_interval INTERVAL,
+    IN p_prod_tline_finish TIMESTAMP,
+    IN p_prod_tline_delivery TIMESTAMP,
+    IN p_prod_del_status BOOLEAN,
+    IN p_product_id INT,
+    IN p_user_id INT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO TRADE.T_PROD_TIMELINE (
+        T_PROD_TLINE_INTERVAL,
+        T_PROD_TLINE_FINISH,
+        T_PROD_TLINE_DELIVERY,
+        T_PROD_DEL_STATUS,
+        T_PRODUCT_ID,
+        USER_ID,
+        CREATION_DATE
+    )
+    VALUES (
+        p_prod_tline_interval,
+        p_prod_tline_finish,
+        p_prod_tline_delivery,
+        p_prod_del_status,
+        p_product_id,
+        p_user_id,
+        CURRENT_TIMESTAMP
+    );
+END;
+$$;
+
+-- Test call to add a new product timeline record
+CALL TRADE.add_prod_timeline(
+    '2 days',
+    '2024-09-10 15:00:00',
+    '2024-09-08 10:00:00',
+    TRUE,
+    1,
+    1
+);
+
+-- Procedure to delete a product timeline record by ID
+CREATE OR REPLACE PROCEDURE TRADE.delete_prod_timeline(
+    IN p_t_prod_tline_id INT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    DELETE FROM TRADE.T_PROD_TIMELINE
+    WHERE T_PROD_TLINE_ID = p_t_prod_tline_id;
+END;
+$$;
+
+-- Test call to delete a product timeline record
+CALL TRADE.delete_prod_timeline(1);
+
+-- Procedure to update an existing product timeline record
+CREATE OR REPLACE PROCEDURE TRADE.update_prod_timeline(
+    IN p_t_prod_tline_id INT,
+    IN p_prod_tline_interval INTERVAL,
+    IN p_prod_tline_finish TIMESTAMP,
+    IN p_prod_tline_delivery TIMESTAMP,
+    IN p_prod_del_status BOOLEAN,
+    IN p_product_id INT,
+    IN p_user_id INT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    UPDATE TRADE.T_PROD_TIMELINE
+    SET 
+        T_PROD_TLINE_INTERVAL = p_prod_tline_interval,
+        T_PROD_TLINE_FINISH = p_prod_tline_finish,
+        T_PROD_TLINE_DELIVERY = p_prod_tline_delivery,
+        T_PROD_DEL_STATUS = p_prod_del_status,
+        T_PRODUCT_ID = p_product_id,
+        USER_ID = p_user_id,
+        LAST_UPDATED_DATE = CURRENT_TIMESTAMP
+    WHERE T_PROD_TLINE_ID = p_t_prod_tline_id;
+END;
+$$;
+
+-- Test call to update a product timeline record
+CALL TRADE.update_prod_timeline(
+    1,
+    '3 days',
+    '2024-09-12 18:00:00',
+    '2024-09-09 12:00:00',
+    FALSE,
+    1,
+    1
+);
+
+
+
