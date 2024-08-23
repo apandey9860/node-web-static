@@ -1,6 +1,8 @@
 // repairRouter.js
 const express = require('express');
-const pool = require('./dbConfig');
+const fs = require('fs');
+const path = require('path');
+const pool = require('../utils/dbConfig');
 const router = express.Router();
 
 // Add Repair Category

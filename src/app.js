@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
-const userRouter = require('./userRouter');
-const tradeRouter = require('./tradeRouter');
-const repairRouter = require('./repairRouter');
+const userRouter = require('./routes/userRouter');
+const tradeRouter = require('./routes/tradeRouter');
+const repairRouter = require('./routes/repairRouter');
 const app = express();
 
 // Middleware
