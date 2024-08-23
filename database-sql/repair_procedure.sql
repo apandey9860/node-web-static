@@ -53,7 +53,7 @@ CREATE OR REPLACE PROCEDURE REPAIR.add_repair_product(
     IN p_product_desc TEXT,
     IN p_category_id INT,
     IN p_prod_pic_name VARCHAR(200),
-    IN p_prod_pic_data BYTEA,
+    IN p_prod_pic_data VARCHAR(100),
     IN p_user_id INT,
 	IN p_prod_tline_interval INTERVAL
 )
@@ -75,7 +75,7 @@ END;
 $$;
 
 -- Test Case
-CALL REPAIR.add_repair_product('Laptop Repair', '150', 'Basic laptop repair', 'Repairing screen and battery', 2, 'laptop_repair.jpg', bytea('\x89504e47'), 2, '3');
+CALL REPAIR.add_repair_product('Laptop Repair', '150', 'Basic laptop repair', 'Repairing screen and battery', 2, 'laptop_repair.jpg', 'laptop_repair.jpg', 2, '3');
 
 
 CREATE OR REPLACE PROCEDURE REPAIR.update_repair_product(
@@ -86,7 +86,7 @@ CREATE OR REPLACE PROCEDURE REPAIR.update_repair_product(
     IN p_product_desc TEXT,
     IN p_category_id INT,
     IN p_prod_pic_name VARCHAR(200),
-    IN p_prod_pic_data BYTEA,
+    IN p_prod_pic_data VARCHAR(100),
     IN p_repair_status BOOLEAN
 )
 LANGUAGE plpgsql
@@ -112,7 +112,7 @@ END;
 $$;
 
 -- Test Case
-CALL REPAIR.update_repair_product(5, 'Updated Laptop Repair', '140', 'Updated repair details', 'Repairing screen, battery, and keyboard', 2, 'updated_laptop_repair.jpg', bytea('\x89504e47'), TRUE);
+CALL REPAIR.update_repair_product(5, 'Updated Laptop Repair', '140', 'Updated repair details', 'Repairing screen, battery, and keyboard', 2, 'updated_laptop_repair.jpg', 'updated_laptop_repair.jpg'), TRUE);
 
 
 CREATE OR REPLACE PROCEDURE REPAIR.delete_repair_product(
