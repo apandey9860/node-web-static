@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>productrepair Page</title>
+    <link rel="stylesheet" href="/CSS/register.min.css">
+</head>
+<body>
+    <div class="popup-container" id="popupContainer">
+        <div id="register-box" class="register-box">
+            <h2>Register</h2>
+            <form id="registerForm" action="#">
+                <div class="user-box">                
+                    <label for="product_name">Product Name</label>
+                    <input id="productname" type="text" name="productname" required title="Enter prduct username" placeholder="product name">
+                </div>
+                <div class="user-box">
+                    <label for="product_price">Product price</label>
+                    <input id="productprice" type="number" name="productprice" required title="Enter product price" placeholder="product price">                
+                </div>
+                <div class="user-box">
+                    <label for="product_s_desc">product short description</label>
+                    <input id="productshortdesc" type="text" name="productshortdesc" required title="Enter short description of product" placeholder="product short description">                
+                </div>
+                <div class="user-box">
+                    <label for="product_desc"> product description</label>
+                    <input id="productdesc" type="text" name="productdesc" required title="Enter products description" placeholder=" product desc">                
+                </div>
+                <div class="category_id">
+                    <label for="category_id">Category id</label>
+                    <input id="categoryid" type="number" name="categoryid" required title="Enter Category id" placeholder="category id">                
+                </div>
+                <div class="user-box">
+                    <label for="password">product pic name</label>
+                    <input id="productpicname" type="text" name="productpicname" required title="Enter products pic name" placeholder="product pic name">                
+                </div>
+                <div class="product-pic_data">
+                    <label for="product_pic_data">product pic data</label>
+                    <input id="productpicdata" type="text" name="productpicdata" required title="enter products pic data" placeholder="product pic data">                
+                </div>
+                <div class="user-box">
+                    <label for="user_id">user id</label>
+                    <input id="userid" type="number" name="userid" required title="Enter your user-id" placeholder=" user id">                
+                </div>
+                <div class="user-box">
+                    <label for="product_t_line">productline</label>
+                    <input id="productline" type="text" name="productline" required title="Confirm your password" placeholder="product tline interval">                
+                </div>
+                <input type="hidden" id="user_access_id" name="user_access_id" value="2">
+                <input type="submit" value="submit">
+            </form>
+            
+    </div>
+    <script src="/service/productRepair.js"></script>
+</body>
+</html>

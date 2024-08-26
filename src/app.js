@@ -41,6 +41,12 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/register.html'));
 });
+app.get('/product_repair', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/product_repair.html'));
+});
+app.get('/trade_procedure', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/trade_procedure.html'));
+});
 
 // Handle dynamic product pages
 app.get('/products/:productName', (req, res) => {

@@ -75,7 +75,7 @@ END;
 $$;
 
 -- Test Case
-CALL REPAIR.add_repair_product('Laptop Repair', '150', 'Basic laptop repair', 'Repairing screen and battery', 2, 'laptop_repair.jpg', 'laptop_repair.jpg', 2, '3');
+CALL REPAIR.add_repair_product('Laptop Repair', '150', 'Basic laptop repair', 'Repairing screen and battery', 1, 'laptop_repair.jpg', 'laptop_repair.jpg', 1, '3');
 
 
 CREATE OR REPLACE PROCEDURE REPAIR.update_repair_product(

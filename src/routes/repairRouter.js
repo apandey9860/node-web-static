@@ -6,7 +6,7 @@ const pool = require('../utils/dbConfig');
 const router = express.Router();
 
 // Add Repair Category
-router.post('/repair/addCategory', async (req, res) => {
+router.post('/addCategory', async (req, res) => {
     const { category_name, category_desc } = req.body;
     try {
         await pool.query(`CALL REPAIR.add_repair_category($1, $2)`, [category_name, category_desc]);
@@ -17,7 +17,7 @@ router.post('/repair/addCategory', async (req, res) => {
 });
 
 // Update Repair Category
-router.put('/repair/updateCategory', async (req, res) => {
+router.put('/updateCategory', async (req, res) => {
     const { category_id, category_name, category_desc } = req.body;
     try {
         await pool.query(`CALL REPAIR.update_repair_category($1, $2, $3)`, [category_id, category_name, category_desc]);
@@ -28,7 +28,7 @@ router.put('/repair/updateCategory', async (req, res) => {
 });
 
 // Delete Repair Category
-router.delete('/repair/deleteCategory', async (req, res) => {
+router.delete('/deleteCategory', async (req, res) => {
     const { category_id } = req.body;
     try {
         await pool.query(`CALL REPAIR.delete_repair_category($1)`, [category_id]);
@@ -39,12 +39,14 @@ router.delete('/repair/deleteCategory', async (req, res) => {
 });
 
 // Add Repair Product with Picture
-router.post('/repair/addProduct', async (req, res) => {
-    const { product_name, product_price, product_desc, category_id, prod_pic_name, prod_pic_data } = req.body;
+router.post('/addProduct', async (req, res) => {
+    const { p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data,p_user_id,p_prod_tline_interval  } = req.body;
+    console.log(  p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data,p_user_id,p_prod_tline_interval );
+    
     try {
         await pool.query(
-            `CALL REPAIR.add_repair_product($1, $2, $3, $4, $5, $6)`,
-            [product_name, product_price, product_desc, category_id, prod_pic_name, prod_pic_data]
+            `CALL REPAIR.add_repair_product($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+            [ p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data,p_user_id,p_prod_tline_interval ]
         );
         res.status(200).send('Repair product added successfully');
     } catch (err) {
@@ -53,7 +55,7 @@ router.post('/repair/addProduct', async (req, res) => {
 });
 
 // Update Repair Product with Picture
-router.put('/repair/updateProduct', async (req, res) => {
+router.put('/updateProduct', async (req, res) => {
     const { product_id, product_name, product_price, product_desc, category_id, prod_pic_name, prod_pic_data } = req.body;
     try {
         await pool.query(
@@ -67,7 +69,7 @@ router.put('/repair/updateProduct', async (req, res) => {
 });
 
 // Delete Repair Product
-router.delete('/repair/deleteProduct', async (req, res) => {
+router.delete('/deleteProduct', async (req, res) => {
     const { product_id } = req.body;
     try {
         await pool.query(`CALL REPAIR.delete_repair_product($1)`, [product_id]);
