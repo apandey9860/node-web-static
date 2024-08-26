@@ -1,91 +1,49 @@
--- Function to update LAST_UPDATED_DATE before any row in PERSON.USERS table is updated.
-CREATE OR REPLACE FUNCTION PERSON.update_last_updated_date()
+CREATE OR REPLACE FUNCTION populate_history_on_delivery()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.LAST_UPDATED_DATE = CURRENT_TIMESTAMP;
+    -- Insert a record into T_HISTORY when delivery status is TRUE
+    IF NEW.T_PROD_DEL_STATUS = TRUE THEN
+        INSERT INTO TRADE.T_HISTORY (
+            T_CATEGORY_NAME,
+            T_PRODUCT_NAME,
+            T_PROD_PIC_DATA,
+            T_PRODUCT_PRICE,
+            T_PROD_TLINE_INTERVAL,
+            T_PROD_TLINE_FINISH,
+            USER_NAME,
+            USER_FULLNAME,
+            USER_PHONE,
+            USER_EMAIL,
+            USER_ADDRESS
+        )
+        SELECT
+            C.T_CATEGORY_NAME,
+            P.T_PRODUCT_NAME,
+            PP.T_PROD_PIC_DATA,
+            P.T_PRODUCT_PRICE,
+            T.T_PROD_TLINE_INTERVAL,
+            T.T_PROD_TLINE_FINISH,
+            U.USER_NAME,
+            U.USER_FULLNAME,
+            U.USER_PHONE,
+            U.USER_EMAIL,
+            U.USER_ADDRESS
+        FROM
+            TRADE.T_PRODUCT P
+            JOIN TRADE.T_CATEGORY C ON P.T_CATEGORY_ID = C.T_CATEGORY_ID
+            LEFT JOIN TRADE.T_PROD_PIC PP ON PP.T_PRODUCT_ID = P.T_PRODUCT_ID
+            JOIN PERSON.USERS U ON T.USER_ID = U.USER_ID
+            JOIN TRADE.T_PROD_TIMELINE T ON T.T_PRODUCT_ID = P.T_PRODUCT_ID
+        WHERE
+            T.T_PROD_TLINE_ID = NEW.T_PROD_TLINE_ID;
+    END IF;
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
--- Trigger to call the update_last_updated_date function before updating any row in PERSON.USERS table.
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON PERSON.USERS
-FOR EACH ROW EXECUTE FUNCTION PERSON.update_last_updated_date();
-
--- Function to update LAST_UPDATED_DATE before any row in MISC.EVENT_LOG table is updated.
-CREATE OR REPLACE FUNCTION MISC.update_last_updated_date()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.LAST_UPDATED_DATE = CURRENT_TIMESTAMP;
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Trigger to call the update_last_updated_date function before updating any row in MISC.EVENT_LOG table.
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON MISC.EVENT_LOG
-FOR EACH ROW EXECUTE FUNCTION MISC.update_last_updated_date();
-
--- Function to update LAST_UPDATED_DATE before any row in TRADE tables is updated.
-CREATE OR REPLACE FUNCTION TRADE.update_last_updated_date()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.LAST_UPDATED_DATE = CURRENT_TIMESTAMP;
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Triggers to call the update_last_updated_date function before updating rows in various TRADE tables.
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON TRADE.T_CATEGORY
-FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON TRADE.T_PRODUCT
-FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON TRADE.T_PROD_PIC
-FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON TRADE.T_PROD_TIMELINE
-FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON TRADE.T_HISTORY
-FOR EACH ROW EXECUTE FUNCTION TRADE.update_last_updated_date();
-
--- Function to update LAST_UPDATED_DATE before any row in REPAIR tables is updated.
-CREATE OR REPLACE FUNCTION REPAIR.update_last_updated_date()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.LAST_UPDATED_DATE = CURRENT_TIMESTAMP;
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Triggers to call the update_last_updated_date function before updating rows in various REPAIR tables.
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_CATEGORY
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_PRODUCT
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_PROD_PIC
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_PROD_TIMELINE
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_PROD_VIEW
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
-
-CREATE TRIGGER users_last_updated_trigger
-BEFORE UPDATE ON REPAIR.R_HISTORY
-FOR EACH ROW EXECUTE FUNCTION REPAIR.update_last_updated_date();
+CREATE TRIGGER trg_populate_history
+AFTER UPDATE OF T_PROD_DEL_STATUS
+ON TRADE.T_PROD_TIMELINE
+FOR EACH ROW
+WHEN (NEW.T_PROD_DEL_STATUS = TRUE)
+EXECUTE FUNCTION populate_history_on_delivery();
