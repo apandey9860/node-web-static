@@ -222,4 +222,51 @@ CALL TRADE.update_prod_timeline(
 );
 
 
+CREATE OR REPLACE FUNCTION get_product_details()
+RETURNS TABLE (
+    product_name VARCHAR,
+    product_short_desc TEXT,
+    product_pic VARCHAR,
+    category_name VARCHAR
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        p.T_PRODUCT_NAME,
+        p.T_PRODUCT_SHORT_DESC,
+        p.T_PRODUCT_PIC,
+        c.T_CATEGORY_NAME
+    FROM
+        TRADE.T_PRODUCT p
+    JOIN
+        TRADE.T_CATEGORY c
+    ON
+        p.T_CATEGORY_ID = c.T_CATEGORY_ID;
+END;
+$$ LANGUAGE plpgsql;
 
+
+
+CREATE OR REPLACE PROCEDURE GetAllProductDetails()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    -- Return a set of records with all product details, including products with or without pictures
+    RETURN QUERY
+    SELECT 
+        p.T_PRODUCT_NAME AS product_name,
+        p.T_PRODUCT_SHORT_DESC AS short_description,
+        pp.T_PROD_PIC_NAME AS picture_name,
+        pp.T_PROD_PIC_DATA AS picture_data,
+        c.T_CATEGORY_NAME AS category_name
+    FROM 
+        TRADE.T_PRODUCT p
+    LEFT JOIN 
+        TRADE.T_PROD_PIC pp ON p.T_PRODUCT_ID = pp.T_PRODUCT_ID
+    LEFT JOIN 
+        TRADE.T_CATEGORY c ON p.T_CATEGORY_ID = c.T_CATEGORY_ID;
+END;
+$$;
+
+
+CALL GetAllProductDetails();
