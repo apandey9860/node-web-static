@@ -74,7 +74,7 @@ END;
 $$;
 
 -- Test Case
-CALL TRADE.add_trade_product('Smartphone', '500', 'Latest model', 'High-end smartphone', 2, 'phone.jpg', 'phone.jpg');
+CALL TRADE.add_trade_product('Smartphone', '500', 'Latest model', 'High-end smartphone', 1, 'phone.jpg', 'phone.jpg');
 
 
 CREATE OR REPLACE PROCEDURE TRADE.update_trade_product(
@@ -222,7 +222,7 @@ CALL TRADE.update_prod_timeline(
 );
 
 
-CREATE OR REPLACE FUNCTION get_product_details()
+CREATE OR REPLACE FUNCTION TRADE.get_product_details()
 RETURNS TABLE (
     product_name VARCHAR,
     product_short_desc TEXT,
@@ -247,7 +247,7 @@ $$ LANGUAGE plpgsql;
 
 
 
-CREATE OR REPLACE PROCEDURE GetAllProductDetails()
+CREATE OR REPLACE PROCEDURE TRADE.GetAllProductDetails()
 LANGUAGE plpgsql
 AS $$
 BEGIN
@@ -269,4 +269,81 @@ END;
 $$;
 
 
-CALL GetAllProductDetails();
+CREATE OR REPLACE FUNCTION TRADE.GetAllProductDetails()
+RETURNS TABLE (
+    product_id INT,
+    product_name VARCHAR(200),
+    short_description TEXT,
+    picture_name VARCHAR(200),
+    picture_data VARCHAR(100), -- Adjust length as needed
+    category_name VARCHAR(200)
+) 
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT 
+        p.T_PRODUCT_ID::INT AS product_id,
+        p.T_PRODUCT_NAME::VARCHAR(200) AS product_name,
+        p.T_PRODUCT_SHORT_DESC::TEXT AS short_description,
+        pp.T_PROD_PIC_NAME::VARCHAR(200) AS picture_name,
+        pp.T_PROD_PIC_DATA::VARCHAR(100) AS picture_data, -- Cast to VARCHAR(100)
+        c.T_CATEGORY_NAME::VARCHAR(200) AS category_name
+    FROM 
+        TRADE.T_PRODUCT p
+    LEFT JOIN 
+        TRADE.T_PROD_PIC pp ON p.T_PRODUCT_ID = pp.T_PRODUCT_ID
+    LEFT JOIN 
+        TRADE.T_CATEGORY c ON p.T_CATEGORY_ID = c.T_CATEGORY_ID;
+END;
+$$;
+
+-- DROP FUNCTION trade.getallproductdetails()
+
+
+SELECT * FROM TRADE.get_product_details();
+SELECT * FROM TRADE.GetAllProductDetails();
+
+
+CREATE OR REPLACE FUNCTION TRADE.GetProductDetailsById(
+    p_product_id INT
+)
+RETURNS TABLE (
+    product_id INT,
+    product_name VARCHAR(200),
+    product_price VARCHAR(200),
+    short_description TEXT,
+    full_description VARCHAR(200),
+    picture_name VARCHAR(200),
+    picture_data VARCHAR(100),
+    category_name VARCHAR(200),
+    category_id INT
+) 
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT 
+        p.T_PRODUCT_ID::INT AS product_id,
+        p.T_PRODUCT_NAME::VARCHAR(200) AS product_name,
+        p.T_PRODUCT_PRICE::VARCHAR(200) as product_price,
+        p.T_PRODUCT_SHORT_DESC::TEXT AS short_description,
+        p.T_PRODUCT_DESC::VARCHAR(200) AS full_description,
+        pp.T_PROD_PIC_NAME::VARCHAR(200) AS picture_name,
+        pp.T_PROD_PIC_DATA::VARCHAR(100) AS picture_data,
+        c.T_CATEGORY_NAME::VARCHAR(200) AS category_name,
+        p.T_CATEGORY_ID::INT AS category_id
+    FROM 
+        TRADE.T_PRODUCT p
+    LEFT JOIN 
+        TRADE.T_PROD_PIC pp ON p.T_PRODUCT_ID = pp.T_PRODUCT_ID
+    LEFT JOIN 
+        TRADE.T_CATEGORY c ON p.T_CATEGORY_ID = c.T_CATEGORY_ID
+    WHERE 
+        p.T_PRODUCT_ID = p_product_id;
+END;
+$$;
+
+--DROP FUNCTION trade.getproductdetailsbyid(integer);
+
+SELECT * FROM TRADE.GetProductDetailsById(13);

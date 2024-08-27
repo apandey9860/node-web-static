@@ -55,11 +55,11 @@ router.post('/addProduct', async (req, res) => {
 
 // Update Trade Product with Picture
 router.put('/updateProduct', async (req, res) => {
-    const { product_id, product_name, product_price, product_desc, category_id, prod_pic_name, prod_pic_data } = req.body;
+    const { p_product_id, p_product_name, p_product_price, p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data } = req.body;
     try {
-        await pool.query(
-            `CALL TRADE.update_trade_product($1, $2, $3, $4, $5, $6, $7)`,
-            [product_id, product_name, product_price, product_desc, category_id, prod_pic_name, prod_pic_data]
+        const result = await pool.query(
+            `CALL TRADE.update_trade_product($1, $2, $3, $4, $5, $6, $7, $8)`,
+            [p_product_id, p_product_name, p_product_price, p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data]
         );
         res.status(200).send('Trade product updated successfully');
     } catch (err) {
@@ -75,6 +75,38 @@ router.delete('/deleteProduct', async (req, res) => {
         res.status(200).send('Trade product deleted successfully');
     } catch (err) {
         res.status(400).send(`Error deleting trade product: ${err.message}`);
+    }
+});
+
+//Route to fetch all product details
+router.get('/getAllProductDetails', async (req, res) => {
+    try {
+        // Query the PostgreSQL function
+        const result = await pool.query('SELECT * FROM TRADE.GetAllProductDetails()');
+        // Send the result as JSON response
+        res.status(200).json(result.rows);
+    } catch (err) {
+        // Handle errors
+        res.status(400).send(`Error fetching product details: ${err.message}`);
+    }
+});
+
+//Route to fetch product detail by id
+router.get('/getProductById', async (req, res) => {
+    const { product_id } = req.query;
+    try {
+        // Query the PostgreSQL function
+        const result = await pool.query(`SELECT * FROM TRADE.GetProductDetailsById($1)`, [product_id]);
+        // Send the result as JSON response
+        // Check if the product exists
+        if (result.rows.length > 0) {
+            res.status(200).json(result.rows[0]); // Send the first result as JSON response
+        } else {
+            res.status(404).send('Product not found');
+        }
+    } catch (err) {
+        // Handle errors
+        res.status(400).send(`Error fetching product details: ${err.message}`);
     }
 });
 
