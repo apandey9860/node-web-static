@@ -128,3 +128,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#USER ADDED IMAGES
+public/images/products/t_products
+public/images/products/r_products
