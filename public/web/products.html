@@ -66,40 +66,8 @@
                     </div>
                 </div>
                 <div id="products">
-                    <div class="row">
-                        <!-- Product Card 1 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="images/products/placeholderProducts-1.jpg" class="card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Product 1</h5>
-                                    <p class="card-text">This is a brief description of Product 1. It is an excellent product that offers great features.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product Card 2 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="images/products/placeholderProducts-2.jpg" class="card-img-top" alt="Product 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Product 2</h5>
-                                    <p class="card-text">This is a brief description of Product 2. It provides outstanding performance and quality.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product Card 3 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="images/products/placeholderProducts-1.jpg" class="card-img-top" alt="Product 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Product 3</h5>
-                                    <p class="card-text">This is a brief description of Product 3. It is designed with cutting-edge technology and features.</p>
-                                    <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row" id="productCardsContainer">
+                        <!-- Product cards will be dynamically inserted here -->
                     </div>
                 </div>
             </div>
@@ -111,7 +79,6 @@
     <script src="components/loadHeader.js"></script>
     <script src="components/loadFooter.js"></script>
     <script src="components/loadComponents.js"></script>
-    <script src="components/cardInteract.js"></script>
-    
+    <script src="service/fetchProducts.js"></script>
     <script src="fonts/fontawesome/js/all.min.js"></script>
 </html>

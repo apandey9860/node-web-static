@@ -19,20 +19,6 @@ function fetchProductData() {
                 `;
                 tbody.appendChild(row);
             });
-
-            document.querySelectorAll('.edit').forEach(button => {
-                button.addEventListener('click', function() {
-                    const productId = this.getAttribute('data-id');
-                    // Fetch product details and populate the edit form
-                });
-            });
-
-            document.querySelectorAll('.delete').forEach(button => {
-                button.addEventListener('click', function() {
-                    const productId = this.getAttribute('data-id');
-                    document.querySelector('#deleteProductForm [name="productId"]').value = productId;
-                });
-            });
         })
         .catch((error) => {
             console.error('Error:', error);
