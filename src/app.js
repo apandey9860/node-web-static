@@ -77,12 +77,15 @@ app.get('/product_repair', (req, res) => {
 app.get('/trade_procedure', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/trade_procedure.html'));
 });
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/home.html'));
+});
 
 // Handle dynamic product pages
-app.get('/products/:productName', (req, res) => {
-  const productName = req.params.productName;
-  res.params.productName = productName;
-  // Load content based on `productName` from a database or file
+app.get('/product/*', (req, res) => {
+  // const productID = req.params.productID;
+  // res.params.productID = productID;
+  // Load content based on `productID` from a database or file
   res.sendFile(path.join(__dirname, '../public/web/product.html'));
 });
 
