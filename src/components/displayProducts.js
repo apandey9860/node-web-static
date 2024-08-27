@@ -4,14 +4,13 @@ function fetchProductData() {
         .then(data => {
             const tbody = document.querySelector('#productTableBody');
             tbody.innerHTML = ''; // Clear existing rows
-
             data.forEach(product => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td><span class="custom-checkbox"><input type="checkbox" class="select-product" value="${product.product_id}"><label></label></span></td>
                     <td>${product.product_name}</td>
                     <td>${product.product_short_desc}</td>
-                    <td><img src="${product.prod_pic_data}" alt="${product.product_name}" style="width: 50px;"></td>
+                    <td><img src="../${product.picture_data}" alt="${product.product_name}" style="width: 50px;"></td>
                     <td>${product.category_name}</td>
                     <td>
                         <a href="#editProductModal" class="edit" data-toggle="modal" data-id="${product.product_id}"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
