@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -6,6 +8,31 @@ const userRouter = require('./routes/userRouter');
 const tradeRouter = require('./routes/tradeRouter');
 const repairRouter = require('./routes/repairRouter');
 const app = express();
+
+
+// Set up multer storage
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+      const pathData = JSON.parse(req.body.pathData);
+      const uploadPath = pathData.uploadPath;
+      console.log(uploadPath)
+
+      // Ensure the path is under the images directory
+      const fullUploadPath = path.join(__dirname, '../public', uploadPath);
+
+      // Create directory if it does not exist
+      if (!fs.existsSync(fullUploadPath)) {
+          fs.mkdirSync(fullUploadPath, { recursive: true });
+      }
+
+      cb(null, fullUploadPath);
+  },
+  filename: function (req, file, cb) {
+      cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
 
 // Middleware
 app.use(cors());
@@ -57,6 +84,11 @@ app.get('/products/:productName', (req, res) => {
   res.params.productName = productName;
   // Load content based on `productName` from a database or file
   res.sendFile(path.join(__dirname, '../public/web/product.html'));
+});
+
+// Handle the POST request to /upload
+app.post('/upload', upload.single('picture'), (req, res) => {
+  res.json({ message: 'File uploaded successfully' });
 });
 
 // Use router
