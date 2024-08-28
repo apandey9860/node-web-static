@@ -68,8 +68,8 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/register.html'));
 });
-app.get('/tProducts', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/manageTradeProducts.html'));
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/admin.html'));
 });
 app.get('/product_repair', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/product_repair.html'));

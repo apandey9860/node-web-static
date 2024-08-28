@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ORG Name</title>
+        <link rel="icon" href="images/Favicon.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="WEBSITE">
+        <meta name="keywords" content="tech, innovations, software, development, serenetechinnovations, serene tech, serenetech">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        
+        <link rel="stylesheet" href="/fonts/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/general.css">        
+        <link rel="stylesheet" href="/css/home.css">
+
+    </head>
+    <body>
+        <div id = "headerIndex"></div>
+
+        <!-- Buttons to open the popups -->
+        <button id="openTradeProductBtn">Open Trade Product</button>
+        <button id="openRepairProductBtn">Open Repair Product</button>
+
+        <!-- The Trade Product Popup -->
+        <div id="tradeProductPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closeTradeProduct">&times;</span>
+                <div id="tradeProduct">
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- The Repair Product Popup -->
+        <div id="repairProductPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closeRepairProduct">&times;</span>
+                <div id="repairProduct">
+                    <h2>Repair Product</h2>
+                    <p>Content for repair product.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id = "footerIndex"></div>
+        
+    <script src="components/loadHeader.js"></script>
+    <script src="components/loadFooter.js"></script>
+    <script src="components/loadRepairAdmin.js"></script>
+    <script src="components/loadTradeAdmin.js"></script>
+    <script src="components/loadComponents.js"></script>
+    <script src="components/headerScript.js"></script>
+    </body>
+    <script src="fonts/fontawesome/js/all.min.js"></script>
+    
+    <script src="components/popupLoad.js"></script>
+</html>
