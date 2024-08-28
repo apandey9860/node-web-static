@@ -78,7 +78,7 @@ app.get('/trade_procedure', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/trade_procedure.html'));
 });
 app.get('/home', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/home.html'));
+  res.sendFile(path.join(__dirname, '../public/web/header2.html'));
 });
 
 // Handle dynamic product pages
