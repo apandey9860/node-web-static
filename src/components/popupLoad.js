@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // When the user clicks the button, open the modal 
     openTradeProductBtn.onclick = function() {
         tradeProduct.style.display = "block";
+        fetchProductData();
     }
 
     openRepairProductBtn.onclick = function() {
@@ -19,8 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the <span> elements that close the modals
     var closeTradeProduct = document.getElementById("closeTradeProduct");
     var closeRepairProduct = document.getElementById("closeRepairProduct");
-    console.log(closeTradeProduct);
-    console.log(closeRepairProduct);
 
     // When the user clicks on <span> (x), close the modal
     closeTradeProduct.onclick = function() {

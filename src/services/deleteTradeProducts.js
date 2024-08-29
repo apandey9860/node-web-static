@@ -1,12 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
+function deleteProductBtnClick(){
+    const button = event.target.closest('button');
+    const productId = button.getAttribute('data-id');
+    const prodID = parseInt(productId);
+    const productData = {
+        product_id: prodID
+    }
+    var modal = document.getElementById('deleteProductModal');
+    console.log(modal);
+    if (modal) {
+        // Show the modal
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
     document.querySelector('#deleteProductForm').addEventListener('submit', function(event) {
         event.preventDefault();
-
-        const productId = this.productId.value;
-        const prodID = parseInt(productId);
-        const productData = {
-            product_id: prodID
-        }
 
         fetch(`/trade/deleteProduct`, {
             method: 'DELETE',
@@ -16,12 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify(productData),
         })
         .then(data => {
-            $('#deleteProductModal').modal('hide');
+            if (modal) {
+                // Show the modal
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+            }
             fetchProductData();
-            alert('Deleted Product');
         })
         .catch((error) => {
             console.error('Error:', error);
         });
     });
-});
+    
+}

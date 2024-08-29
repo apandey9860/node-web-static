@@ -12,6 +12,9 @@ window.addEventListener('scroll', function() {
         topHeader.style.display = 'none';
         bottomHeader.style.display = 'none';
         stickyHeader.style.display = 'flex'; // Match the CSS display property
+        // stickyHeader.style.gridTemplateColumns = 'auto auto auto auto auto auto auto';
+        // stickyHeader.style.justifyItems = 'end';
+        // stickyHeader.style.alignContent = 'center';
     } else {
         // Show the original headers and hide the sticky header
         topHeader.style.display = 'flex'; // Match the CSS display property
