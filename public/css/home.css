@@ -158,6 +158,7 @@
     height: 500px;
     
     margin-top: 20px; /* Optional: Add margin to create space between sections */
+    margin-bottom: 400px;
 }
 
 .video-banner-box{
@@ -201,10 +202,4 @@
   display: flex;
   justify-content: end;
   align-items: end;
-}
-
-.footer{
-  width:60%;
-  justify-content: center;
-  border: 1px solid black;
 }
