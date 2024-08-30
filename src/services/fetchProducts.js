@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('/trade/getAllProductDetails')  // Update the endpoint as needed
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 const productCardsContainer = document.getElementById('productCardsContainer');
                 productCardsContainer.innerHTML = ''; // Clear existing content
                 
