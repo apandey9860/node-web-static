@@ -2,6 +2,8 @@
     HOME          
 -----------------------------------------*/
 
+
+
 #home {
     background: url('/images/banners/placeholderServices-1.jpg') no-repeat center center;
     background-size: cover;
@@ -58,3 +60,181 @@
     background: teal; /* Light green background on hover */
     color: #ffffff; /* Maintain white text color */
   }
+
+  .homepage-banner{
+    height:600px;
+    background-color: rgb(228, 228, 228);
+    margin:0px;
+    display:flex;
+    justify-content: row;
+
+
+  }
+
+  .writing{
+    position: absolute;
+    margin-top: 100px;
+    left: 20%;
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+    flex-direction: column; 
+    
+  
+  }
+
+  .banner-image{
+    position: relative;
+    
+    left: 50%;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .service-dispay{
+    position:relative;
+    left:20%;
+    width: 60%;
+    height:auto;
+    
+  }
+ 
+  .service-title{
+    margin-top:-15px;
+    display: flex;
+    flex-direction: row;
+    text-align: center  ;
+    justify-content: center;
+    gap:12px;
+  }
+  .service-boxes{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+  }
+  .box1{
+    width:400px;
+    height:350px;
+    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .servicebox-image{
+    height:70%;
+    border:solid 2px rgba(255, 72, 0, 0.795) ;
+  }
+  .service-name{
+    position: relative;
+    bottom:20px;
+    height:40px;
+    width:250px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+
+  .a{
+   
+    width: 100%;
+    padding-bottom: 20px;
+    height: 1000px;
+  }
+  
+  .video-banner {
+    background: url('/images/home-page/bg-02.webp') no-repeat center center;
+    position: relative; /* Change to relative to keep it in the flow */
+    width: 100%;
+    height: 500px;
+    
+    margin-top: 20px; /* Optional: Add margin to create space between sections */
+    margin-bottom: 400px;
+}
+
+.video-banner-box{
+  position: relative;
+  left: 15%;
+  top:30%;
+  width: 700px;
+  height: 600px;
+  background-color: white;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+ 
+}
+.video-title{
+  
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top:10%;
+  
+  gap:12px;
+}
+.video-textbox{
+  position: relative;
+  top:50px;
+  left: 25%;
+}
+.video-image1{
+  height:100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top:45%;
+  left:70%;
+  
+}
+.video-image{
+  height:100px;
+  width: 100px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.footer-home{
+  height: 500px;
+  width: 100%;
+  background-color: transparent;
+  
+
+}
+.footer-content{
+  border-top: solid 1px rgb(206, 204, 204);
+  border-bottom: solid 1px rgb(206, 204, 204);
+  display: flex;
+  
+  position: relative;
+  width:60%;
+  left: 20%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
+
+.footer-box{
+  /* border: solid 1px black; */
+  height: 60%;
+  width:300px;
+  position: relative;
+  top:20%;
+  
+}
+.subscribe{
+  width:120px;
+  height: 40px;
+  background-color: #fa7a43;
+}
