@@ -80,6 +80,18 @@ app.get('/trade_procedure', (req, res) => {
 app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/header2.html'));
 });
+app.get('/adminpage', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/admin-page.html'));
+});
+app.get('/adminproductlist', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/admin-productlist.html'));
+});
+app.get('/productdetails', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/product-details.html'));
+});
+app.get('/createproduct', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/admin-create.html'));
+});
 
 // Handle dynamic product pages
 app.get('/product/*', (req, res) => {

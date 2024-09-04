@@ -1,0 +1,121 @@
+
+
+/*.sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(52, 52, 52);
+    width:300px;
+    height: 100vh;
+    text-align: start;
+    position: fixed;
+    
+}
+.sidebar-text{
+    font-size:11px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#575454;
+    position: relative;
+    left:35px;
+    padding-top: 15px;
+}
+ */
+ .Dashboard{
+    color: rgb(195, 195, 195);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    position: relative;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+ }
+ .side-font{
+    font-size:12;
+    color: rgb(195, 195, 195);
+    text-decoration: none;
+ }
+ .side-topic{
+    font-size:12;
+    color: rgb(131, 131, 131);
+ }
+
+ .side-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 250px; 
+    height: 100vh; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #333;
+    padding: 15px;
+    padding-right: 0px;
+    overflow-y: auto;
+}
+
+.side-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu li a {
+    color: rgb(195, 195, 195);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: #555;
+}
+
+.dropdown-content {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+}
+
+.menu li a.dropdown-btn::after {
+    content: "▼";
+    float: right;
+}
+
+.menu li a.dropdown-btn.active::after {
+    content: "▲";
+}
+
+.menu li .dropdown-content a {
+    padding: 5px 10px;
+    
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.menu li .dropdown-content a:hover {
+    background-color: #666;
+}
