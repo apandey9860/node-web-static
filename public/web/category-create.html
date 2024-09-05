@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href ="./css/sidebar.css">
+    <link rel = "stylesheet" href = "./css/header-admin.css">
+    <link rel = "stylesheet" href = "./css/admin.css">
+    <link rel = "stylesheet" href = "./css/tradeProduct.css">
+    <link rel = "stylesheet" href = "./css/bootstrap.min.css">
+    <title>admin</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.dropdown-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const dropdownContent = this.nextElementSibling;
+                    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+    
+</head>
+<body class = "admin-body">
+    <div class="sidebar">
+        <div class="side-header">EERO</div>
+        <div class ="Dashboard">
+        <a href="#Dashboard" class = "side-font">Dashboard</a>
+    </div>
+        <ul class="menu">
+                
+            <a  class ="side-topic">Sales</a> 
+            <li>
+                <a href="#products" class="dropdown-btn">Products </a>
+                <ul class="dropdown-content">
+                    <li><a href="./adminproductlist">List</a></li>
+                    <li><a href="#">Grid</a></li>
+                    <li><a href="./productdetails">Details</a></li>
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="./createproduct">Create</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#category" class="dropdown-btn">Category </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">List</a></li>
+                    <li><a href="#">Grid</a></li>
+                    <li><a href="#">Details</a></li>
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="#">Create</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#orders" class="dropdown-btn">Orders </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">List</a></li>
+                    <li><a href="#">Details</a></li>
+                    <li><a href="#"> cart</a></li>
+                    <li><a href="#">Checkout</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#inventory" class="dropdown-btn">Inventory </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Warehouse</a></li>
+                    <li><a href="#">Recieved Orders</a></li>
+                    
+                </ul>
+            </li>
+            <a class = "side-topic" >Repairs</a>
+            <li>
+                <a href="#products" class="dropdown-btn">Products </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Product 1</a></li>
+                    <li><a href="#">Product 2</a></li>
+                    <li><a href="#">Product 3</a></li>
+                    <li><a href="#">Product 4</a></li>
+                    <li><a href="#">Product 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#category" class="dropdown-btn">Category </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Category 1</a></li>
+                    <li><a href="#">Category 2</a></li>
+                    <li><a href="#">Category 3</a></li>
+                    <li><a href="#">Category 4</a></li>
+                    <li><a href="#">Category 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#orders" class="dropdown-btn">Orders </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Order 1</a></li>
+                    <li><a href="#">Order 2</a></li>
+                    <li><a href="#">Order 3</a></li>
+                    <li><a href="#">Order 4</a></li>
+                    <li><a href="#">Order 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#inventory" class="dropdown-btn">Inventory </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                    <li><a href="#">Item 5</a></li>
+                </ul>
+            </li>
+        
+        <a class="side-topic">Others</a>
+        <li>
+            <a href="#products" class="dropdown-btn">Customers </a>
+            <ul class="dropdown-content">
+                <li><a href="#">Product 1</a></li>
+                <li><a href="#">Product 2</a></li>
+                
+            </ul>
+        </li>
+        
+        </ul>
+        <div class ="Dashboard">
+            <a href="chat" class="side-font">Chat</a>
+        </div>
+        
+        <div class ="Dashboard">
+            <a href="chat" class="side-font">Calendar</a>
+        </div>
+    </div>
+    
+
+<div class = "main-section">
+    <div class = "header" id ="myHeader">
+        <div class = "top-bar-text">
+            <p style="font-family: 'Roboto', sans-serif;">Category Edit</p>
+        </div>
+        <div class = "top-bar-items">
+            <a href="#">
+                <img style="height: 20px; width: 20px;" src = "./images/home-page/light-mode-10979.png" alt ="night light" >
+            <a href="#">                      
+                
+                <img style="height: 25px; width: 25px;" src= "./images/home-page/notification.svg" alt = " notification" href ="#">
+            </a>  
+            <a href = "#">
+                    <img style="height: 35px; width: 35px;" src= "./images/home-page/circle-png-182.png" alt = " profile" href = "#">
+            </a>
+            <div class = "header-admin-search">
+                <img src ="./images/home-page/search-286-32.png">
+                <p style="padding: 0px; margin: 0; text-align: center; color: rgb(180, 178, 178);">Search..</p>
+
+            </div>
+
+        </div>
+    
+        
+    </div>
+     
+    <div class="create-wrapper">      
+        <div class="createtop-wrapper">
+            <div class="createimage-wrap">
+                <div class="create-image">
+                    <img style="width: 200px;height: 200px;" src="./images/home-page/laptoppng.png">
+                    
+                </div>
+                <p class="create-detail" style="font-family: 'Times New Roman', Times, serif;">Lenovo IdeaPad 710S Plus</p>
+                <p style=" text-align: start; font-size:17px; color:gray; margin-top: 15px; margin-bottom:0px; margin-right:150px;">price:</p>
+                <p class="create-detail">900.00$ <sub style=" font-size: 18px; text-decoration: line-through; margin: 0px;">100$</sub> </p>
+                <p  style="font-size: 20px; color: red; margin-bottom: 20px; margin-top: 10px; margin-right: 70px; padding-bottom: 10px; padding-left: 30px;">10%Off</p>
+                <div class="createimage-bottom">
+                <div class="product-create">
+                    <p style="margin: 0px; padding: 0px; "> Create Category</p>
+                </div>
+                <div class = "create-cancel">
+                    
+                    <p style="margin: 0; padding: 0px; text-align: center;">Cancel</p>
+                </div>
+                </div>
+            </div>
+            <div class="add-photo">
+                <div class="addphoto-text">
+                    <p style="padding-left:30px; font-size: 18px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        Add Thumbnail Photo Here
+                    </p>
+                </div>
+                <div class="productimage">
+                    <div class="image-upload-box" id="imageUploadBox">
+                        <p>Drag image here or <br><button id="browseButton">Browse Image</button></p>
+                        <input type="file" id="fileInput" accept="image/*">
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <!-- <div class="product-info">
+            <div class="productinfo-title">
+                <p> Product information</p>
+            </div>
+            <div class="productinfo-form">
+                <div class="pname">
+                <label> Product Name</label>
+                <input style=" position: relative; right: 50px; border-radius: 5px; width:320px; height: 30px; padding-left: 10px;" type="text" id =" name" placeholder="Item Name">
+                
+                <label >Category</label>
+                <input style=" position: relative; right: 50px; border-radius: 5px; width:320px; height: 30px; padding-left: 10px;" type="text" id="category" placeholder=" Choose category">
+            </div>
+                <div class="brand-weight">
+                   <label> Brand</label>
+                <input style=" position: relative; right:150px; border-radius: 5px; width:200px; height: 30px; padding-left: 10px;" type="Text" id="brand" placeholder="Brand">
+                <label> weight </label>
+                <input style=" position: relative; right: 150px; border-radius: 5px; width:200px; height: 30px; padding-left: 10px;" type="number" id="weight" placeholder="weight in kg">
+                </div> 
+            </div>
+        </div> -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="addProductForm">
+                    <div class="modal-header">                        
+                        <h4 class="modal-title"> Category Information</h4>
+                    </div>
+                    <div class="modal-body">                    
+                        <div class="form-group">
+                            <label>Category  Name</label>
+                            <input placeholder="Category-Name" type="text" name="productName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Brand Name</label>
+                            <input placeholder="Brand Category" type="Text" name="productPrice" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Stock</label>
+                            <input placeholder="Stock left" type="number" name="productShortDesc" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tag-id</label>
+                            <textarea placeholder="Tag" name="productDesc" class="form-control" required></textarea>
+                        </div>
+                                      
+                    </div>
+                    <div class="form-footer">
+                        <button id="cancelTradeAdd"  type="button" class="btn btn-default" data-dismiss="modal">save changes</button>
+                        <button type="submit" class="btn btn-success">cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>    
+    <div class ="footer">
+        <p>Copyright EERO @ all righrs reserved</p>
+    </div>
+</div>
+<Script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const imageUploadBox = document.getElementById('imageUploadBox');
+    const fileInput = document.getElementById('fileInput');
+    const browseButton = document.getElementById('browseButton');
+
+    // Handle drag over event
+    imageUploadBox.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        imageUploadBox.style.backgroundColor = '#e0e0e0';
+    });
+
+    // Handle drag leave event
+    imageUploadBox.addEventListener('dragleave', () => {
+        imageUploadBox.style.backgroundColor = '#ffffff';
+    });
+
+    // Handle drop event
+    imageUploadBox.addEventListener('drop', (event) => {
+        event.preventDefault();
+        imageUploadBox.style.backgroundColor = '#ffffff';
+        const files = event.dataTransfer.files;
+        if (files.length > 0) {
+            handleFiles(files);
+        }
+    });
+
+    // Handle browse button click event to open file browser
+    browseButton.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    // Handle file input change event
+    fileInput.addEventListener('change', () => {
+        const files = fileInput.files;
+        if (files.length > 0) {
+            handleFiles(files);
+        }
+    });
+
+    // Function to handle the selected or dropped files
+    function handleFiles(files) {
+        const file = files[0];
+        console.log('File selected:', file.name);
+        // Further processing (e.g., preview, upload) can be done here
+    }
+});
+
+</Script>
+</body>
+</html>
