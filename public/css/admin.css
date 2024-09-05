@@ -646,3 +646,23 @@ margin: 0px;
     border-radius: 10px;
 }
 
+
+.header-admin-search input{
+    padding: 0px; 
+    border: 0; 
+    background-color: #f3f0f0; 
+    margin: 0; 
+    text-align: center; 
+    outline: none;
+}
+
+
+.header-admin-search input::placeholder{
+    color: rgb(27, 27, 27);
+    
+}
+
+.header-admin-search input, textarea{
+    color: rgb(27, 27, 27);
+    
+}
