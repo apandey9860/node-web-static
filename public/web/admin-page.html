@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href ="./css/sidebar.css">
+    <link rel = "stylesheet" href = "./css/header-admin.css">
+    <link rel = "stylesheet" href = "./css/admin.css">
+    <title>admin</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.dropdown-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const dropdownContent = this.nextElementSibling;
+                    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+    
+</head>
+
+<body class ="admin-body">
+    <!-- <div class = "sidebar">
+        <br>
+        <h1 style= "font-size: 30px; color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; position: relative; left:35px; top:5px;"> EERO</h1>
+        
+        <p class= sidebar-text> GENERAL</p>
+        <p>Dashboard</p>
+        <ul>
+            <li><a href = "#">Sales ↴ </a></li>
+                <ul class = "dropdown">
+                    <li>Products</li>
+                    <li>Category</li>
+                    <li>Orders</li>
+                    <li>inventory</li>
+
+                </ul>
+        </ul> -->
+        <div class="sidebar">
+            <div class="side-header">EERO</div>
+            <div class ="Dashboard">
+            <a href="#Dashboard" class = "side-font">Dashboard</a>
+        </div>
+            <ul class="menu">
+                    
+                <a  class ="side-topic">Sales</a> 
+                <li>
+                    <a href="#products" class="dropdown-btn">Products </a>
+                    <ul class="dropdown-content">
+                        <li><a href="/adminproductlist">List</a></li>
+                        <li><a href="#">Grid</a></li>
+                        <li><a href="#">Details</a></li>
+                        <li><a href="#">Delete</a></li>
+                        <li><a href="#">Create</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#category" class="dropdown-btn">Category </a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">List</a></li>
+                        <li><a href="#">Grid</a></li>
+                        <li><a href="#">Details</a></li>
+                        <li><a href="#">Delete</a></li>
+                        <li><a href="#">Create</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#orders" class="dropdown-btn">Orders </a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">List</a></li>
+                        <li><a href="#">Details</a></li>
+                        <li><a href="#"> cart</a></li>
+                        <li><a href="#">Checkout</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#inventory" class="dropdown-btn">Inventory </a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Warehouse</a></li>
+                        <li><a href="#">Recieved Orders</a></li>
+                        
+                    </ul>
+                </li>
+                <a class = "side-topic" >Repairs</a>
+                <li>
+                    <a href="#products" class="dropdown-btn">Products </a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                        <li><a href="#">Product 3</a></li>
+                        <li><a href="#">Product 4</a></li>
+                        <li><a href="#">Product 5</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#category" class="dropdown-btn">Category </a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Category 1</a></li>
+                        <li><a href="#">Category 2</a></li>
+                        <li><a href="#">Category 3</a></li>
+                        <li><a href="#">Category 4</a></li>
+                        <li><a href="#">Category 5</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#orders" class="dropdown-btn">Orders </a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Order 1</a></li>
+                        <li><a href="#">Order 2</a></li>
+                        <li><a href="#">Order 3</a></li>
+                        <li><a href="#">Order 4</a></li>
+                        <li><a href="#">Order 5</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#inventory" class="dropdown-btn">Inventory </a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+                        <li><a href="#">Item 4</a></li>
+                        <li><a href="#">Item 5</a></li>
+                    </ul>
+                </li>
+            
+            <a class="side-topic">Others</a>
+            <li>
+                <a href="#products" class="dropdown-btn">Customers </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Product 1</a></li>
+                    <li><a href="#">Product 2</a></li>
+                    
+                </ul>
+            </li>
+            
+            </ul>
+            <div class ="Dashboard">
+                <a href="chat" class="side-font">Chat</a>
+            </div>
+            
+            <div class ="Dashboard">
+                <a href="chat" class="side-font">Calendar</a>
+            </div>
+        </div>
+        
+    
+    <div class = "main-section">
+        <div class = "header" id ="myHeader">
+            <div class = "top-bar-text">
+                <p style="font-family: 'Roboto', sans-serif;">WELCOME!</p>
+            </div>
+            <div class = "top-bar-items">
+                <a href="#">
+                    <img style="height: 20px; width: 20px;" src = "./images/home-page/light-mode-10979.png" alt ="night light" >
+                <a href="#">                      
+                    
+                    <img style="height: 25px; width: 25px;" src= "./images/home-page/notification.svg" alt = " notification" href ="#">
+                </a>  
+                <a href = "#">
+                        <img style="height: 35px; width: 35px;" src= "./images/home-page/circle-png-182.png" alt = " profile" href = "#">
+                </a>
+                <div class = "header-admin-search">
+                    <img src ="./images/home-page/search-286-32.png">
+                    <p style="padding: 0px; margin: 0; text-align: center; color: rgb(180, 178, 178);">Search..</p>
+
+                </div>
+
+            </div>
+            
+
+        </div>
+        <div class="mainwrapper">
+        <div class = admin-topwrapper>
+            <div class = "content-box">
+                <div class ="total-orders">
+                    <div class="img-admin">
+                        <img src = "./images/home-page/pngwing.com (1).png">
+                    </div>
+                    <div class = "content-data">
+                        <p>Total orders</p>
+                        <h1>10,000</h1>
+                    </div>
+                    <div class="idk">
+                        <div class = "data">
+                            <p style="font-size: 15px; color: rgb(33, 231, 33); ">^2.3% </p>
+                            <p style="font-size: 15px; color: gray;"> Last week</p>
+                        </div>
+                        <br>
+                        <br>
+                        
+                        
+                        <a style="  padding-left: 20px; font-size: 15px; color: gray; " href="#">view more</a>
+                    </div>
+                    
+                </div>
+                <br>
+                <div class ="total-orders">
+                    <div class="img-admin">
+                            <img src = "./images/home-page/pngwing.com (1).png">
+                    </div>
+                    <div class = "content-data">
+                        <p>Revenue</p>
+                            <h1>$10,000</h1>
+                    </div>
+                    <div class="idk">
+                        <div class = "data">
+                            <p style="font-size: 15px; color: rgb(33, 231, 33); ">^2.3% </p>
+                            <p style="font-size: 15px; color: gray;"> Last week</p>
+                        </div>
+                        <br>
+                        <br>
+                        
+
+                        <a style="  padding-left: 20px; font-size: 15px; color: gray; " href="#">view more</a>
+                    </div>
+                                
+                
+
+                </div>
+
+            </div>
+            <div class ="top-pages">
+                <div class = "top-page-top">
+                        <p style="margin-left: 20px; font-size:18px; font-family: 'Roboto', sans-serif; color: rgb(90, 88, 86);"> Top Pages</p>
+                <a href="#" style="text-decoration: none;">
+                    <div class ="view-all-button">
+                        <p style="margin: 0; padding:0; color:rgb(253, 80, 17);"> view all</p>
+                    </div>
+                </a>
+                </div>
+                <div class="toppage-topic">
+                    <table class ="custom-table" >
+                        <tr>
+                            <th style="width: 220px;height: 60px;text-align: start; ">Page path</th>
+                            <th style ="width: 120px;text-align: start;">Page views</th>
+                            <th style ="width: 120px; text-align: start;">Exit Rate</th>
+                            
+                        </tr>
+                        <tr >
+                            <td>eero/home</td>
+                            <td>500</td>
+                            <td>1%</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>eero/repair</td>
+                            <td>200</td>
+                            <td>20%</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>eero/products</td>
+                            <td>300</td>
+                            <td>24%</td>
+                            
+                        </tr>
+                    </table>
+                    
+                </div>    
+            </div>
+
+            
+            </div>
+        
+        </div>
+        <div class="admin-bottomwrapper">
+            <div class ="recent-orders">
+                <div class = "top-page-top">
+                        <p style="margin-left: 20px; font-size:18px; font-family: 'Roboto', sans-serif; color: rgb(90, 88, 86);"> Recent Orders</p>
+                <a href="#" style="text-decoration: none;">
+                    <div class ="createorder-button">
+                        <p style="margin: 0; padding:0; color:rgb(253, 80, 17);"> Create order</p>
+                    </div>
+                </a>
+                </div>
+                <div class="toppage-topic">
+                <table class = "custom-table">
+                    <tr style="height: 60px; text-align: start;">
+                        <th style="width:120px;text-align: start;">Order ID.</th>
+                        <th style="width:100px;text-align: start;">Date</th>
+                        <th style="width:110px;text-align: start;">PRoduct</th>
+                        <th style="width:170px;text-align: start;">Email ID</th>
+                        <th style="width:120px;text-align: start;">Phone No</th>
+                        <th style="width:190px;text-align: start;">Address </th>
+                        <th  style="width:130px;text-align: start;">Payment Type</th>
+                        <th style="width:100px;text-align: start;">Status</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2/3/2021</td>
+                        <td>image</td>
+                        <td>abc@gmail.com</td>
+                        <td>123567777</td>
+                        <td>KTM</td>
+                        <td>Credit Card</td>
+                        <td>Complete</td>
+                        
+                        
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2/3/2021</td>
+                        <td>image</td>
+                        <td>abc@gmail.com</td>
+                        <td>123567777</td>
+                        <td>KTM</td>
+                        <td>Credit Card</td>
+                        <td>Complete</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2/3/2021</td>
+                        <td>image</td>
+                        <td>abc@gmail.com</td>
+                        <td>123567777</td>
+                        <td>KTM</td>
+                        <td>Credit Card</td>
+                        <td>Complete</td>
+                        
+                    </tr>
+                    
+                    
+                    </table>
+                </div>
+                
+                    
+                </div>    
+            </div>
+        <div class ="footer">
+            <p>Copyright EERO @ all righrs reserved</p>
+        </div>
+    </div>
+        
+   
+    <script>
+        
+window.onscroll = function() {myFunction()};
+
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+    </script>
+
+
+</body>
+</html>
