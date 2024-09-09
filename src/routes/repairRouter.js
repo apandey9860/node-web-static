@@ -92,4 +92,25 @@ router.get('/getAllProductDetails', async (req, res) => {
     }
 });
 
+//Route to fetch product detail by id
+router.get('/getProductById', async (req, res) => {
+    const { product_id } = req.query;
+    try {
+        // Query the PostgreSQL function
+        const result = await pool.query(`SELECT * FROM REPAIR.GetProductDetailsById($1)`, [product_id]);
+        // Send the result as JSON response
+        // Check if the product exists
+        if (result.rows.length > 0) {
+            res.status(200).json(result.rows[0]); // Send the first result as JSON response
+        } else {
+            res.status(404).send('Product not found');
+        }
+    } catch (err) {
+        // Handle errors
+        res.status(400).send(`Error fetching product details: ${err.message}`);
+    }
+});
+
+
+
 module.exports = router;
