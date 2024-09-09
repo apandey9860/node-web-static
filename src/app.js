@@ -92,6 +92,30 @@ app.get('/productdetails', (req, res) => {
 app.get('/createproduct', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/admin-create.html'));
 });
+app.get('/adminedit', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/admin-edit.html'));
+});
+app.get('/pcategorylist', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/category-list.html'));
+});
+app.get('/pcategoryedit', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/category-edit.html'));
+});
+app.get('/pcategorycreate', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/category-create.html'));
+});
+app.get('/porderlist', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/porderlist.html'));
+});
+app.get('/inventory', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/inventory.html'));
+});
+app.get('/recievedorders', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/inventory-recieved.html'));
+});
+app.get('/ordercart', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/order-cart.html'));
+});
 
 // Handle dynamic product pages
 app.get('/product/*', (req, res) => {

@@ -5,6 +5,8 @@
     <link rel="stylesheet" href ="./css/sidebar.css">
     <link rel = "stylesheet" href = "./css/header-admin.css">
     <link rel = "stylesheet" href = "./css/admin.css">
+    <link rel = "stylesheet" href = "./css/tradeProduct.css">
+    <link rel = "stylesheet" href = "./css/bootstrap.min.css">
     <title>admin</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -31,11 +33,11 @@
             <li>
                 <a href="#products" class="dropdown-btn">Products </a>
                 <ul class="dropdown-content">
-                    <li><a href="./admin-productlist.html">List</a></li>
+                    <li><a href="./adminproductlist">List</a></li>
                     <li><a href="#">Grid</a></li>
-                    <li><a href="#">Details</a></li>
+                    <li><a href="./productdetails">Details</a></li>
                     <li><a href="#">Delete</a></li>
-                    <li><a href="#">Create</a></li>
+                    <li><a href="./createproduct">Create</a></li>
                 </ul>
             </li>
             <li>
@@ -192,7 +194,7 @@
             
             
         </div>
-        <div class="product-info">
+        <!-- <div class="product-info">
             <div class="productinfo-title">
                 <p> Product information</p>
             </div>
@@ -210,6 +212,38 @@
                 <label> weight </label>
                 <input style=" position: relative; right: 150px; border-radius: 5px; width:200px; height: 30px; padding-left: 10px;" type="number" id="weight" placeholder="weight in kg">
                 </div> 
+            </div>
+        </div> -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="addProductForm">
+                    <div class="modal-header">                        
+                        <h4 class="modal-title"> Product Information</h4>
+                    </div>
+                    <div class="modal-body">                    
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input placeholder="productName" type="text" name="productName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Category</label>
+                            <input placeholder="product Category" type="Text" name="productPrice" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Brand</label>
+                            <input placeholder="Brand name" type="text" name="productShortDesc" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Weight</label>
+                            <textarea placeholder="Weight in kgs" name="productDesc" class="form-control" required></textarea>
+                        </div>
+                                      
+                    </div>
+                    <div class="form-footer">
+                        <button id="cancelTradeAdd"  type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

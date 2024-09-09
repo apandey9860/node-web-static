@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href ="./css/sidebar.css">
+    <link rel = "stylesheet" href = "./css/header-admin.css">
+    <link rel = "stylesheet" href = "./css/admin.css">
+    <title>admin</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.dropdown-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const dropdownContent = this.nextElementSibling;
+                    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+    
+</head>
+<body class = "admin-body">
+    <div class="sidebar">
+        <div class="side-header">EERO</div>
+        <div class ="Dashboard">
+        <a href="#Dashboard" class = "side-font">Dashboard</a>
+    </div>
+        <ul class="menu">
+                
+            <a  class ="side-topic">Sales</a> 
+            <li>
+                <a href="#products" class="dropdown-btn">Products </a>
+                <ul class="dropdown-content">
+                    <li><a href="./admin-productlist.html">List</a></li>
+                    <li><a href="#">Grid</a></li>
+                    <li><a href="#">Details</a></li>
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="#">Create</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#category" class="dropdown-btn">Category </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">List</a></li>
+                    <li><a href="#">Grid</a></li>
+                    <li><a href="#">Details</a></li>
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="#">Create</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#orders" class="dropdown-btn">Orders </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">List</a></li>
+                    <li><a href="#">Details</a></li>
+                    <li><a href="#"> cart</a></li>
+                    <li><a href="#">Checkout</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#inventory" class="dropdown-btn">Inventory </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Warehouse</a></li>
+                    <li><a href="#">Recieved Orders</a></li>
+                    
+                </ul>
+            </li>
+            <a class = "side-topic" >Repairs</a>
+            <li>
+                <a href="#products" class="dropdown-btn">Products </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Product 1</a></li>
+                    <li><a href="#">Product 2</a></li>
+                    <li><a href="#">Product 3</a></li>
+                    <li><a href="#">Product 4</a></li>
+                    <li><a href="#">Product 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#category" class="dropdown-btn">Category </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Category 1</a></li>
+                    <li><a href="#">Category 2</a></li>
+                    <li><a href="#">Category 3</a></li>
+                    <li><a href="#">Category 4</a></li>
+                    <li><a href="#">Category 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#orders" class="dropdown-btn">Orders </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Order 1</a></li>
+                    <li><a href="#">Order 2</a></li>
+                    <li><a href="#">Order 3</a></li>
+                    <li><a href="#">Order 4</a></li>
+                    <li><a href="#">Order 5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#inventory" class="dropdown-btn">Inventory </a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                    <li><a href="#">Item 5</a></li>
+                </ul>
+            </li>
+        
+        <a class="side-topic">Others</a>
+        <li>
+            <a href="#products" class="dropdown-btn">Customers </a>
+            <ul class="dropdown-content">
+                <li><a href="#">Product 1</a></li>
+                <li><a href="#">Product 2</a></li>
+                
+            </ul>
+        </li>
+        
+        </ul>
+        <div class ="Dashboard">
+            <a href="chat" class="side-font">Chat</a>
+        </div>
+        
+        <div class ="Dashboard">
+            <a href="chat" class="side-font">Calendar</a>
+        </div>
+    </div>
+    
+
+<div class = "main-section">
+
+    <div class = "header" id ="myHeader">
+        <div class = "top-bar-text">
+            <p style="font-family: 'Roboto', sans-serif;">Received Orders</p>
+        </div>
+        <div class = "top-bar-items">
+            <a href="#">
+                <img style="height: 20px; width: 20px;" src = "./images/home-page/light-mode-10979.png" alt ="night light" >
+            <a href="#">                      
+                
+                <img style="height: 25px; width: 25px;" src= "./images/home-page/notification.svg" alt = " notification" href ="#">
+            </a>  
+            <a href = "#">
+                    <img style="height: 35px; width: 35px;" src= "./images/home-page/circle-png-182.png" alt = " profile" href = "#">
+            </a>
+            <div class = "header-admin-search">
+                <img src ="./images/home-page/search-286-32.png">
+                <p style="padding: 0px; margin: 0; text-align: center; color: rgb(180, 178, 178);">Search..</p>
+
+            </div>
+
+        </div>
+        
+        
+    </div>
+    <div class="cartmainwrapper">
+        <div class="order-leftwrapper">
+            <div class="cart-toptext">
+                <p>
+                    There are 4 product in your cart
+                </p>
+                <a href="#" style="text-decoration: none; color: white;">
+                    clear cart
+                </a>
+            </div>
+
+        </div>
+        <div class="order-rightwrapper">
+
+        </div>
+    </div>
+      
+        <br>
+        <br>
+    <div class ="footer">
+        <p>Copyright EERO @ all righrs reserved</p>
+    </div>
+</div>
+</body>
