@@ -79,4 +79,17 @@ router.delete('/deleteProduct', async (req, res) => {
     }
 });
 
+//Route to fetch all Repair details
+router.get('/getAllProductDetails', async (req, res) => {
+    try {
+        // Query the PostgreSQL function
+        const result = await pool.query('SELECT * FROM REPAIR.GetAllProductDetails()');
+        // Send the result as JSON response
+        res.status(200).json(result.rows);
+    } catch (err) {
+        // Handle errors
+        res.status(400).send(`Error fetching repair product details: ${err.message}`);
+    }
+});
+
 module.exports = router;
