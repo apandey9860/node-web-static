@@ -698,6 +698,7 @@ margin: 0px;
     font-weight: lighter;
     color: rgb(64, 63, 63);;
 
+<<<<<<< HEAD
 }
 .cartmiddle-subtext{
     display: flex;
@@ -960,4 +961,25 @@ margin: 0px;
 .securitytext img{
     height: 30px;
     width: 30px;
+=======
+
+.header-admin-search input{
+    padding: 0px; 
+    border: 0; 
+    background-color: #f3f0f0; 
+    margin: 0; 
+    text-align: center; 
+    outline: none;
+}
+
+
+.header-admin-search input::placeholder{
+    color: rgb(27, 27, 27);
+    
+}
+
+.header-admin-search input, textarea{
+    color: rgb(27, 27, 27);
+    
+>>>>>>> 6881d8e9a1ed286731dfc253a91cd328022ee738
 }
