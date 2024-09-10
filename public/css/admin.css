@@ -623,18 +623,14 @@ margin: 0px;
 }
 .order-leftwrapper{
     
-    width: 600px;
+    width: 780px;
     height: auto;
 
 }
-.order-rightwrapper{
-    background-color: rebeccapurple;
-    width: 400px;
-    height: 20px;
-}
+
 .cart-toptext{
-    background-color: rgb(255, 72, 0);
-    width: 100%;
+    background-color: rgb(252, 101, 41);
+    width: 730px;
     height: 65px;
     padding-left: 20px;
     padding-right: 20px;
@@ -645,4 +641,323 @@ margin: 0px;
     text-align: center;
     border-radius: 10px;
 }
+.cart-itemwrapper{
+    width:740px;
+    background-color: white;
+    height: 220px;
+    padding-left: 30px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+}
+.cartitem-left{
+    height: 200px;
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ordercart-itemimage{
+    width:100px;
+    height: 90px;
+    background-color: #d6dee9;
+    border-radius:10px ;
+}
+.ordercart-itemimage img{
+    width:90px;
+    height: 90px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.ordercart-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap:5px;
+}
+.ordercart-text img{
+    position: relative;
+    top:10px;
+}
+.ordercart-text p{
+    position: relative;
+    top:10px;
+}
+.ordercart-text img{
+    width:20px;
+    height: 20px;
+}
+.cartitem-middle{
+    padding-left: 10px;
+    margin-left: 10px;
+}
+.cartitem-middle h1{
+    font-size:19px;
+    font-weight: lighter;
+    color: rgb(64, 63, 63);;
 
+}
+.cartmiddle-subtext{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    color: rgb(75, 75, 75);
+    margin: 0px;
+}
+.cartmiddle-subtext p{
+    margin:0px
+}
+.addnumber-cart{
+    margin-top: 30px;
+    width: 110px;
+    height: 30px;
+    border: 1px solid rgb(224, 222, 222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    border-radius: 10px;
+   
+}
+.addnumber-cart a{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    background-color: #d6dee9;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.addnumber-cart p{
+    margin:0px
+}
+.cartitem-end{
+    height:200px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-right: 30px;
+    
+
+}
+.cartend-top{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-left: 300px;
+ 
+    
+}
+.cartend-top p{
+    margin-top: 0;
+    margin-bottom: 5px;
+    
+    
+}
+.cartend-bottom{
+    height: 50px;
+    padding-left:300px;
+    padding-bottom: 10px;
+}
+.order-rightwrapper{
+
+}
+.order-righttopwrapper{
+    background-color: rgb(238, 111, 31);
+    width: 350px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.order-righttopwrapper p{
+    margin-top:0px
+}
+.order-righttopwrapper input{
+    width:120px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(252, 186, 166);
+    border: 0px;
+    color: rgb(246, 242, 242);
+}
+
+.promocode{
+    display: flex;
+    flex-direction: row ;
+    gap:10px;
+}
+.promocode button{
+    width:60px;
+    height:35px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    border: 0px;
+}
+.order-rightbottomwrapper{
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    border-radius: 10px;
+}
+.order-rightbottomwrapper table{
+    width: 350px;
+    
+}
+
+.checkoutmainwrapper{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-left: 60px;
+    margin-top: 20px;
+
+}
+.cout-leftwrapper{
+    
+    width: 790px;
+    height: auto;
+    background-color: white;
+
+}
+.cout-rightwrapper{
+
+}
+.personal-details{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+.pdetails-header{
+    width:150px;
+    height: 200px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.pdetails-form{
+    margin-bottom: 20px;
+    padding-top: 20px;
+    
+}
+.pform-top{
+    width: 540px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pform-div{
+
+}
+.pform-div input{
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    padding-left: 10px;
+    border: solid 1px gray;
+    
+}
+.pform-div label{
+    color: gray;
+}
+.pform-addressdiv input{
+    width: 500px;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 60px;
+    
+    padding-left: 10px;
+    border: solid 1px gray;
+}
+.pform-address{
+    
+        width: 540px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    
+}
+.pform-add input{
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    width: 120px;
+    padding-left: 10px;
+    border: solid 1px gray;
+}
+.visa{
+    width: 180px;
+    height: 120px;
+    background-color: #d6dee9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.visa p{
+    margin: 0px;
+    position: relative; 
+    bottom: 20px;
+}
+.visa img{
+    position: relative;
+    bottom: 20px;
+    width: 90px;
+    height: 90px;
+}
+.paypal{
+    width: 180px;
+    height: 120px;
+    background-color: #d6dee9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.paypal p{
+    margin: 0px;
+    position: relative; 
+    bottom: 0px;
+}
+.paypal img{
+    position: relative;
+    bottom: 10px;
+    width: 90px;
+    height: 60px;
+}
+
+
+.securitytext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-direction: row;
+    background-color: rgb(182, 246, 179);
+    width: 500px;
+    position: relative;
+    left: 200px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    gap:10px;
+}
+.securitytext img{
+    height: 30px;
+    width: 30px;
+}
