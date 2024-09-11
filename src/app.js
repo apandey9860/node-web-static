@@ -80,41 +80,57 @@ app.get('/trade_procedure', (req, res) => {
 app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/header2.html'));
 });
+// admin page/dashboard
 app.get('/adminpage', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/admin-page.html'));
 });
+//product  list
 app.get('/adminproductlist', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/admin-productlist.html'));
 });
+//product  details
 app.get('/productdetails', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/product-details.html'));
 });
+//product  create (create a product)
 app.get('/createproduct', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/admin-create.html'));
 });
+//product  edit , edit a product
 app.get('/adminedit', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/admin-edit.html'));
 });
+// category list
 app.get('/pcategorylist', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/category-list.html'));
 });
+// category edit
 app.get('/pcategoryedit', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/category-edit.html'));
 });
+//category create
 app.get('/pcategorycreate', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/category-create.html'));
 });
+// orders list
 app.get('/porderlist', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/porderlist.html'));
 });
+//inventory of all products
 app.get('/inventory', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/inventory.html'));
 });
+//all the recieved orders (inventory)
 app.get('/recievedorders', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/inventory-recieved.html'));
 });
+// order cartpage
 app.get('/ordercart', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/order-cart.html'));
+});
+//checkout
+app.get('/ordercheckout', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/order-checkout.html'));
 });
 
 // Handle dynamic product pages
