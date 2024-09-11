@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('openRepairProductBtn').addEventListener('click', function(event){
-        document.getElementById('addTrade').addEventListener('click', function(event){
+        document.getElementById('addRepair').addEventListener('click', function(event){
             var modal = document.getElementById('addProductModal');
             if (modal) {
                 // Show the modal
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const picName = picData.name.split('.')[0];
             
                 // Code to store the picture locally in the format (/images/trade/products/picName/pic)
-                const dynamicPath = `images/products/t_products/${picName}`;
+                const dynamicPath = `images/products/r_products/${picName}`;
                 const formData = new FormData();
                 const pathData = {
                     uploadPath: dynamicPath
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     p_prod_pic_data: dynamicPath + '/' + pic
                 };
             
-                fetch('/trade/addProduct', {
+                fetch('/repair/addProduct', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
