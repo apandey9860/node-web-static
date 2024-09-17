@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('openRepairProductBtn').addEventListener('click', function(event){
         document.getElementById('addRepair').addEventListener('click', function(event){
-            var modal = document.getElementById('addProductModal');
+            var modal = document.getElementById('addRepairProductModal');
             if (modal) {
                 // Show the modal
                 modal.style.display = 'block';
                 modal.setAttribute('aria-hidden', 'false');
             }
-            document.querySelector('#addProductForm').addEventListener('submit', function(event) {
+            document.querySelector('#addRepairProductForm').addEventListener('submit', function(event) {
                 event.preventDefault(); 
             
                 var picData = this.pictureURL.files[0];
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.querySelector('#addProductForm').reset();
             
                         // Call fetchProductData to refresh product list
-                        fetchProductData();
+                        fetchRepairProductData();
                     })
                     .catch((error) => console.error('Error:', error));            
                 })

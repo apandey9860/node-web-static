@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch and display Services
     function loadServices() {
-        fetch('/trade/getAllProductDetails')  // Update the endpoint as needed
+        fetch('/repair/getAllProductDetails')  // Update the endpoint as needed
             .then(response => response.json())
             .then(data => {
                 const serviceCardsContainer = document.getElementById('serviceCardsContainer');

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     openRepairProductBtn.onclick = function() {
         repairProduct.style.display = "block";
+        fetchRepairProductData();
     }
 
     // Get the <span> elements that close the modals

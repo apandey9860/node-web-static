@@ -38,15 +38,15 @@ router.delete('/deleteCategory', async (req, res) => {
     }
 });
 
-// Add Repair Product with Picture
+
+// Add Trade Product with Picture
 router.post('/addProduct', async (req, res) => {
-    const { p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data,p_user_id,p_prod_tline_interval  } = req.body;
-    console.log(  p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data,p_user_id,p_prod_tline_interval );
+    const { p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data } = req.body;
     
     try {
         await pool.query(
-            `CALL REPAIR.add_repair_product($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
-            [ p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data,p_user_id,p_prod_tline_interval ]
+            `CALL REPAIR.add_repair_product($1, $2, $3, $4, $5, $6, $7)`,
+            [p_product_name, p_product_price,p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data]
         );
         res.status(200).send('Repair product added successfully');
     } catch (err) {
