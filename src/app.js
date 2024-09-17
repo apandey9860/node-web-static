@@ -132,6 +132,56 @@ app.get('/ordercart', (req, res) => {
 app.get('/ordercheckout', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/order-checkout.html'));
 });
+//  Order Details
+app.get('/orderdetail', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/order-detail.html'));
+});
+//repair section
+//repair product-list
+app.get('/rproductlist', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rproduct-list.html'));
+});
+app.get('/rproductdetails', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rproduct-details.html'));
+});
+//repair product=create
+app.get('/rproductcreate', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rproduct-create.html'));
+});
+//repair product-edit
+app.get('/rproductedit', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rproduct-edit.html'));
+});
+//repair category section
+//rcategory-list
+app.get('/rcategorylist', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rcategory-list.html'));
+});
+//rcategory-create
+app.get('/rcategorycreate', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rcategory-create.html'));
+});
+//rcategory-edit
+app.get('/rcategoryedit', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rcategory-edit.html'));
+});
+//orders section
+//order list
+app.get('/rorderlist', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rorder-list.html'));
+});
+//order details
+app.get('/rorderdetails', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rorder-details.html'));
+});
+//order cart
+app.get('/rordercart', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rorder-cart.html'));
+});
+//order checkout
+app.get('/rordercheckout', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/rorder-checkout.html'));
+});
 
 // Handle dynamic product pages
 app.get('/product/*', (req, res) => {
