@@ -123,7 +123,7 @@
 .toppage-topic{
     width: 100%;
     height:60px;
-    background-color: #d6d6d6;
+    background-color: #e7e3e3;
 
 }
 .admin-bottomwrapper{
@@ -166,6 +166,8 @@
 .custom-table {
     border-collapse: collapse; /* Ensures borders are consistent */
     width: 100%;
+    background-color: #f3f4f5;
+    border-radius: 5px;
 }
 
 .custom-table tr{
@@ -961,7 +963,7 @@ margin: 0px;
 .securitytext img{
     height: 30px;
     width: 30px;
-=======
+}
 
 .header-admin-search input{
     padding: 0px; 
@@ -981,5 +983,488 @@ margin: 0px;
 .header-admin-search input, textarea{
     color: rgb(27, 27, 27);
     
->>>>>>> 6881d8e9a1ed286731dfc253a91cd328022ee738
 }
+.detail-rightbottomwrapper{
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    bottom: 32px;
+}
+.detail-rightbottomwrapper table{
+    width: 350px;
+    
+}
+.orderprogress{
+    background-color: white;
+    height: 266px;
+    border-radius: 10px;
+}
+.progressorder-top{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 25px;
+    padding-top: 30px;
+}
+.pdetails-top{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+}
+.payment-status{
+    background-color: rgb(179, 243, 179);
+    
+    padding: 0;
+    width: 50px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.payment-status p{
+       margin: 0px;
+       color: rgb(2, 93, 2);
+       font-size: 11px;
+      
+}
+.order-status{
+    margin: 0px;
+    width: 60px;
+    height: 20px;
+    border: 1px solid rgb(245, 150, 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.order-status p{
+    margin: 0px;
+    position: relative;
+    bottom: 2px;
+    color: rgb(245, 150, 7);
+    font-size: 11px;
+    }
+.pdetails-top h1{
+    margin: 0px;
+    padding: 0px;
+    font-size: 22px;
+    font-weight:lighter;
+}
+
+.progressorder-bottom p{
+    margin-top: 5px;
+    
+    color: gray;
+    font-size: 15px;
+}
+.progress-buttons{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+}
+.refund-button{
+    padding-left: 10px;
+    padding-right: 10px ;
+    border:1px solid black;   
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;  
+}
+.edit-button{
+    padding-left: 10px;
+    padding-right: 10px ;
+    background-color: rgb(255, 77, 0);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;  
+}
+.edit-button p{
+    color:white;
+}
+.progress-second{
+    padding-left:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.progress-barwrapper{
+    display: flex;
+    flex-direction: row;
+}
+.second-pheader h1{
+    margin: 0px;
+    font-size:20px;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.progress-bar{
+    display: flex;
+    flex-direction: column;
+}
+.progress-box{
+    width:140px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.pogress-loadstatus{
+    width:120px;
+    height: 10px;
+    background-color: rgb(67, 237, 67);
+    border-radius: 10px;
+    background-image:linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.pogress-loadstatus p{
+    text-align: center;
+}
+.pogress-loadstatus2{
+    width:120px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 10px;
+    background-image:linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-third{
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    margin-top: 30px;
+}
+.eta{
+    border-radius: 10px;
+    background-color: #f2f0f0;
+    width: 280px;
+    text-align: center;
+    padding:5px;
+    margin: 0px;
+}
+.eta p{
+    margin:0px;
+}
+.detailmainwrapper{
+    width: auto;
+    height: 1700px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-left: 60px;
+    margin-top: 20px;
+}
+.odetails-table{
+        background-color: white;    
+        height: 295px;
+}
+
+
+
+.timeline {
+    
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.status-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 15px;
+    position: relative;
+}
+
+.status-circle.complete {
+    background-color: #4caf50;
+}
+
+.timeline-content {
+    flex: 1;
+    
+}
+.space{
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeline-content p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.timeline-content .subtext {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.timeline-content .email {
+    color: #ff5722;
+}
+
+.timeline-content .time {
+    font-size: 0.85em;
+    color: #999;
+}
+
+.timeline-content .resend-btn, 
+.timeline-content .download-btn {
+    padding: 8px 15px;
+    background-color: #f4511e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.timeline-content .resend-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.status {
+    margin: 5px 0;
+}
+
+.status-paid {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.order-buttons button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.order-buttons button:hover {
+    background-color: #ddd;
+}
+.payment-information{
+    background-color: white;
+    height: 200px;
+    border-radius: 10px;
+}
+        
+.pinfo-header{
+    height: 50px;
+    border-bottom: 1px solid gainsboro;
+    
+}
+.pinfo-header h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size:18px;
+    padding-top: 15px;
+    text-align: left;
+    padding-left: 22px;
+}
+.detail-rightbotmain{
+    width: 270px ;
+}
+.detail-rightbotmain table{
+    width: 290px;
+    background-color: rgb(249, 249, 249);
+}
+.pinfo-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    gap:10px;
+}
+.pinfo-img{
+    width: 50px;
+    height: 50px;
+}
+.pinfo-img img{
+    height: 30px;
+    width: 40px;
+}
+.pinfo-details p{
+    margin: 0px;
+}
+.pinfo-check{
+    width: 50px;
+    height: 50px;
+}
+.pinfo-check img{
+    height: 20px;
+    width: 20px;
+    padding-top: 10px;
+    padding-left: 25px;
+}
+.card-details{
+    padding-left: 25px;
+    padding-top: 10px;
+    
+}
+.card-details p{
+    font-size: 15px;
+    margin:0px;
+    margin-bottom: 5px;
+    color: rgb(78, 78, 78);
+}
+.customer-details{
+    width: 300px;
+    border-radius: 10px;
+    background-color: white;
+}
+.cdetails-header{
+    border-bottom:1px solid rgb(198, 194, 194)
+}
+.cdetails-header h2{
+    font-size: 18px;
+    font-weight: lighter;
+    padding-top: 10px;
+    text-align: start;
+    padding-left: 20px;
+}
+.customer-info{
+    display: flex;
+    flex-direction: row;
+}
+.customer-info p{
+    font-size: 15px;
+    margin: 0px;
+    margin-bottom: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+}
+.cinfo-details{
+    margin-left: 10px;
+    padding-top: 15px;
+}
+.customer-pic{
+    
+}
+.customer-pic img{
+    width: 40px;
+    height: 40px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.contact-info{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+.cinfo{
+    display: flex;
+    flex-direction: column;
+
+}
+.cinfo h2{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0px;
+    padding-left: 18px;
+    padding-top: 15px;
+}
+.cinfo p{
+    margin:0px;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: rgb(83, 82, 82);
+}
+.contact-info img{
+    width: 20px;
+    height: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+.shipping-address{
+    display: flex;
+    flex-direction: column;
+}
+.shipping-address img{
+    width: 20px;
+    height: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+.sinfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+}
+.sinfo h2{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0px;
+    padding-left: 26px;
+    padding-top: 20px;
+    margin-bottom: 14px;
+}
+.shipping-info p{
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    color: rgb(65, 65, 65);
+    padding-left: 25px;
+    margin: 0px;
+
+    margin-bottom: 6px;
+}
+.billing-address{
+    display: flex;
+    flex-direction: column;
+}
+.billing-address img{
+    width: 20px;
+    height: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+.binfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+}
+.binfo h2{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0px;
+    padding-left: 26px;
+    padding-top: 20px;
+    margin-bottom: 14px;
+}
+.billing-info p{
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    color: rgb(65, 65, 65);
+    padding-left: 25px;
+    margin: 0px;
+
+    margin-bottom: 20px;
+
+}
+

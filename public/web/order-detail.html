@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href ="./css/sidebar.css">
+    <link rel = "stylesheet" href = "./css/header-admin.css">
+    <link rel = "stylesheet" href = "./css/admin.css">
+    <title>admin</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.dropdown-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const dropdownContent = this.nextElementSibling;
+                    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+    
+</head>
+<body class = "admin-body">
+    <div class="sidebar">
+        <div class="side-header">EERO</div>
+        <div class ="Dashboard">
+        <a href="/adminpage" class = "side-font">Dashboard</a>
+    </div>
+        <ul class="menu">
+                
+            <a  class ="side-topic">Sales</a> 
+            <li>
+                <a href="#products" class="dropdown-btn">Products </a>
+                <ul class="dropdown-content">
+                    <li><a href="/adminproductlist">List</a></li>
+                    <li><a href="/productdetails">Details</a></li>
+                    <li><a href="/createproduct">Create</a></li>
+                    <li><a href="/adminedit">Edit</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#category" class="dropdown-btn">Category </a>
+                <ul class="dropdown-content">
+                    <li><a href="/pcategorylist">List</a></li>
+                    <li><a href="/pcategorycreate">Create</a></li>
+                    <li><a href="/pcategoryedit">Edit</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#orders" class="dropdown-btn">Orders </a>
+                <ul class="dropdown-content">
+                    <li><a href="/porderlist">List</a></li>
+                    <li><a href="/orderdetail">Details</a></li>
+                    <li><a href="/ordercart"> cart</a></li>
+                    <li><a href="/ordercheckout">Checkout</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#inventory" class="dropdown-btn">Inventory </a>
+                <ul class="dropdown-content">
+                    <li><a href="/inventory">Product Inventory</a></li>
+                    <li><a href="/recievedorders">Recieved Orders</a></li>
+                    
+                </ul>
+            </li>
+            <a class = "side-topic" >Repairs</a>
+            <li>
+                <a href="#products" class="dropdown-btn">Products </a>
+                <ul class="dropdown-content">
+                    <li><a href="/adminproductlist">List</a></li>
+                    <li><a href="/productdetails">Details</a></li>
+                    <li><a href="/createproduct">Create</a></li>
+                    <li><a href="/adminedit">Edit</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#category" class="dropdown-btn">Category </a>
+                <ul class="dropdown-content">
+                    <li><a href="/pcategorylist">List</a></li>
+                    <li><a href="/pcategorycreate">Create</a></li>
+                    <li><a href="/pcategoryedit">Edit</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#orders" class="dropdown-btn">Orders </a>
+                <ul class="dropdown-content">
+                    <li><a href="/porderlist">List</a></li>
+                    <li><a href="/orderdetail">Details</a></li>
+                    <li><a href="/ordercart"> cart</a></li>
+                    <li><a href="/ordercheckout">Checkout</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#inventory" class="dropdown-btn">Inventory </a>
+                <ul class="dropdown-content">
+                    <li><a href="/inventory">Product Inventory</a></li>
+                    <li><a href="/recievedorders">Recieved Orders</a></li>
+                </ul>
+            </li>
+        
+        <a class="side-topic">Others</a>
+        <li>
+            <a href="#products" class="dropdown-btn">Customers </a>
+            <ul class="dropdown-content">
+                <li><a href="#">Product 1</a></li>
+                <li><a href="#">Product 2</a></li>
+                
+            </ul>
+        </li>
+        
+        </ul>
+        <div class ="Dashboard">
+            <a href="chat" class="side-font">Chat</a>
+        </div>
+        
+        <div class ="Dashboard">
+            <a href="chat" class="side-font">Calendar</a>
+        </div>
+    </div>
+    
+
+<div class = "main-section">
+
+    <div class = "header" id ="myHeader">
+        <div class = "top-bar-text">
+            <p style="font-family: 'Roboto', sans-serif;">Order Details</p>
+        </div>
+        <div class = "top-bar-items">
+            <a href="#">
+                <img style="height: 20px; width: 20px;" src = "./images/home-page/light-mode-10979.png" alt ="night light" >
+            <a href="#">                      
+                
+                <img style="height: 25px; width: 25px;" src= "./images/home-page/notification.svg" alt = " notification" href ="#">
+            </a>  
+            <a href = "#">
+                    <img style="height: 35px; width: 35px;" src= "./images/home-page/circle-png-182.png" alt = " profile" href = "#">
+            </a>
+            <div class = "header-admin-search">
+                <img src ="./images/home-page/search-286-32.png">
+                <p style="padding: 0px; margin: 0; text-align: center; color: rgb(180, 178, 178);">Search..</p>
+
+            </div>
+
+        </div>
+        
+        
+    </div>
+    <div class="detailmainwrapper">
+        <div class="order-leftwrapper">
+        <div class="orderprogress">
+                <div class="progressorder-top">
+                    <div class="progress-details">
+                        <div class="pdetails-top">
+                            <h1>#07532</h1>
+                            <div class="payment-status">
+                                <p>paid</p>
+                            </div>
+                            <div class="order-status">
+                                <p>In progress</p>
+                            </div>
+                        </div>
+                        <div class="progressorder-bottom">
+                            <p>Order / Order details / #07532 -Dec 29,2024 at 2:22pm</p>
+                        </div>
+                    </div>
+                    <div class="progress-buttons">
+                        <div class="refund-button">
+                            Refund
+                        </div>
+                        <div class="refund-button">
+                            return
+                        </div>
+                        <div class="edit-button" >
+                          <p>  Edit Order </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class= "progress-second">
+                    <div class ="second-pheader">
+                        <h1>Progress</h1>
+                </div>
+                    <div class="progress-barwrapper">
+                        <div class="progress-bar">
+                            <div class="progress-box">
+                                <div class="pogress-loadstatus">
+                                    <p>Order confirmed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-box">
+                                <div class="pogress-loadstatus">
+                                    <p>Payment pending</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-box">
+                                <div class="pogress-loadstatus2">
+                                    <p>processing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-box">
+                                <div class="pogress-loadstatus2">
+                                    <p>shipping</p>
+                                </div>
+                            </div>
+                        </div>     
+                        <div class="progress-bar">
+                            <div class="progress-box">
+                                <div class="pogress-loadstatus2">
+                                    <p>Delivered</p>
+                            </div>
+                        </div>
+                    </div>  
+                    </div>              
+                </div>
+                <div class="progress-third">
+                    <div class="eta">
+                        <p> Esitmated Shipping Date: Jan 3,2025</p>
+                    </div>
+                    <div class="edit-button">
+                     <p>   Make as ready to ship </p>   
+                    </div>
+                </div>
+                
+
+            </div>
+            <br>
+            <br>
+            <div class="odetails-table">
+                <div class="toppage-topic">
+                    <table class = "custom-table">
+                        <tr style="height: 60px; text-align: start;">
+                            <th style="width:120px;text-align: start;">  Product image</th>
+                            <th style="width:120px;text-align: start;">Product Name</th>
+                            <th style="width:100px;text-align: start;">Price</th>
+                            <th style="width:110px;text-align: start;">quantity</th>
+                            <th style="width:170px;text-align: start;">status</th>
+                            <th style="width:70px;text-align: start;">Total</th>
+                            
+                            
+                        </tr>
+                        <tr>
+
+                                                <td>&nbsp &nbsp<img src ="./images/home-page/laptoppng.png" style="width:50px;height: 50px;"> </td>
+
+                            <td>Speaker</td>
+                            <td>100$</td>
+                            <td>1</td>
+                            <td>ready</td>
+                            <td>$120</td>
+                            
+                            
+                            
+                        </tr>
+                        <tr>
+                            <td>&nbsp &nbsp<img src ="./images/home-page/laptoppng.png" style="width:50px;height: 50px;"> </td>
+
+                        
+                            <td>Laptop</td>
+                            <td>600$</td>
+                            <td>3</td>
+                            <td>packaging</td>
+                            <td>$700</td>
+                            
+                            
+                        </tr>
+                        <tr>
+                            <td>&nbsp &nbsp<img src ="./images/home-page/laptoppng.png" style="width:50px;height: 50px;"> </td>
+
+                            
+                            <td>Samsung Zfold</td>
+                            <td>2000$</td>
+                            <td>2</td>
+                            <td>ready</td>
+                            <td> $2200</td>
+                            
+                        </tr>
+                        
+                        
+                        </table>
+                        <div>
+            
+                        </div>
+                        <div class="card-footer border-top">
+                            
+                                <ul class="pagination justify-content-end mb-0">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            
+                    </div>
+                    
+                    </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="timeline">
+                <h2>Order Timeline</h2>
+                <div class="timeline-item">
+                    <div class="status-circle complete"></div>
+                    <div class="timeline-content">
+                        <div class="space">
+                        <div>
+                            <p><strong>The packing has been started</strong></p>
+                            <p class="subtext">Confirmed by Gaston Lapierre</p>
+                        </div>
+                        <div>
+                            <p class="time">April 23, 2024, 09:40 am</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="timeline-item">
+                    <div class="status-circle complete"></div>
+                    <div class="timeline-content">
+                        <div class="space">
+                            <div>
+                                <p><strong>The Invoice has been sent to the customer</strong></p>
+                                <p class="subtext">Invoice email was sent to <span class="email">hello@dundermufflin.com</span></p>
+                                <button class="resend-btn">Resend Invoice</button>
+                            </div>
+                            <div>
+                                <p class="time">April 23, 2024, 09:40 am</p>                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="timeline-item">
+                    <div class="status-circle complete"></div>
+                    <div class="timeline-content">
+                        <div class="space">
+                            <div>
+                                <p><strong>The Invoice has been created</strong></p>
+                        <p class="subtext">Invoice created by Gaston Lapierre</p>
+                        <button class="download-btn">Download Invoice</button>
+                            </div>
+                            <div>
+                                <p class="time">April 23, 2024, 09:40 am</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="timeline-item">
+                    <div class="status-circle complete"></div>
+                    <div class="timeline-content">
+                        <div class="space">
+                            <div>
+                                <p><strong>Order Payment</strong></p>
+                                <p class="subtext">Using Master Card</p>
+                                <p class="status">Status: <span class="status-paid">Paid</span></p>
+                            </div>
+                            <div>
+                                <p class="time">April 23, 2024, 09:40 am</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="timeline-item">
+                    <div class="status-circle complete"></div>
+                    <div class="timeline-content">
+                        <div class="space">
+                            <div>
+                                <p><strong>4 Order confirm by Gaston Lapierre</strong></p>
+                                <div class="order-buttons">
+                                    <button>Order 1</button>
+                                    <button>Order 2</button>
+                                    <button>Order 3</button>
+                                    <button>Order 4</button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="time">April 23, 2024, 09:40 am</p>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class= order-rightwrapper>
+           
+            <br>
+            <br>
+            <div class="detail-rightwrapper">
+                <div class="detail-rightbotmain">
+                    <table >
+                        <tr style="width: 190px; ">
+                            <th style="border-bottom: solid black 1px;height: 40px; width: 190px;" colspan="2" >Order Summary</th>
+                        </tr>
+                        <tr >
+                            <td style=" padding-left: 30px;height: 30px; width: 270px;">
+                                Sub Total:
+                            </td>
+                            <td>
+                                $800
+                            </td>
+                        </tr>
+                        <tr >
+                            <td style=" padding-left: 30px;  height: 30px; width: 270px;">
+                                Discount:
+                            </td>
+                            <td>
+                                -$0
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=" padding-left: 30px;  height: 40px; width: 270px; border-bottom: 1px black solid;">
+
+                                Delivery Charge
+                            </td>
+                            <td style="border-bottom: 1px black solid; padding-right: 4px;">
+                                $10
+                            </td>
+                        </tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr>
+                            <td style=" padding-left: 30px;  height: 30px; width: 270px;">
+
+                            Total Amount
+                            </td>
+                            <td>$810</td>
+                        </tr>
+                        <tr>
+                            <td style=" font-size: 18px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  padding-top: 20px; text-align: center;" colspan="2">
+                                Estimated Delivery by 12 Mar,2024
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    </div>
+            </div>
+            <br>
+            <br>
+            <div class="payment-information">
+                <div class="pinfo-header">
+                    <h2>Payment information</h2>
+
+                </div>
+                <div class="pinfo-body">
+                    <div class="pinfo-img">
+                        <img src="./images/home-page/mastercardpng.png" alt="payment method">
+                    </div>
+                    <div class="pinfo-details">
+                        <p>Master Card</p>
+                        <p>xxxx xxxx xxxx</p>
+                        <p>7212</p>
+                    </div> 
+                    <div class="pinfo-check">
+                        <img src="./images/home-page/checkpng.png" alt="payment check">
+                    </div>
+                </div>
+                <div class="card-details">
+                    <p> Transaction ID: #SOL123121</p>
+                    <p>Card Holder Name: Johny Dober</p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="customer-details">
+                <div class="cdetails-header">
+                    <h2>Customer Details</h2>
+                </div>
+                <div class="customer-info">
+                    <div class="customer-pic">
+                        <img src="./images/home-page/personpng.png">
+                    </div>
+                    <div class="cinfo-details">
+                        <p>Johny Dober</p>
+                        <p>johny@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="cinfo">
+                        <h2>Contact Number</h2>
+                        <p>(723) 732-760-5760</p>
+                    </div>
+                    <div>
+                        <img src="./images/home-page/edit.png">
+                    </div>
+                </div>
+                <div class="shipping-address">
+                    <div class="sinfo">
+                        <h2>Shipping Address</h2>
+
+                        <img src="./images/home-page/edit.png">
+                    </div>
+                    
+                    <div class="shipping-info">
+                        <p>Wilson's Jewelers LTD</p>
+                        <p>1344 Hershell Hollow Road ,</p>
+                        <p>Tukwila, WA 98168 ,</p>
+                        <p>United States</p>
+                        <p>(723) 732-760-5760</p>
+                    </div>
+                </div>
+                <div class="billing-address">
+                    <div class="binfo">
+                        <h2>Billing Address</h2>
+
+                        <img src="./images/home-page/edit.png">
+                    </div>
+                    
+                    <div class="billing-info">
+                        <p>Wilson's Jewelers LTD</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+      
+        <br>
+        <br>
+    <div class ="footer">
+        <p>Copyright EERO @ all righrs reserved</p>
+    </div>
+</div>
+</body>
