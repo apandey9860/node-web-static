@@ -56,17 +56,18 @@ router.post('/addProduct', async (req, res) => {
 
 // Update Repair Product with Picture
 router.put('/updateProduct', async (req, res) => {
-    const { product_id, product_name, product_price, product_desc, category_id, prod_pic_name, prod_pic_data } = req.body;
+    const { p_product_id, p_product_name, p_product_price, p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data } = req.body;
     try {
-        await pool.query(
-            `CALL REPAIR.update_repair_product($1, $2, $3, $4, $5, $6, $7)`,
-            [product_id, product_name, product_price, product_desc, category_id, prod_pic_name, prod_pic_data]
+       const result= await pool.query(
+            `CALL REPAIR.update_repair_product($1, $2, $3, $4, $5, $6, $7, $8)`,
+            [p_product_id, p_product_name, p_product_price, p_product_short_desc, p_product_desc, p_category_id, p_prod_pic_name, p_prod_pic_data]
         );
-        res.status(200).send('Repair product updated successfully');
+        res.status(200).json('Repair product updated successfully');
     } catch (err) {
         res.status(400).send(`Error updating repair product: ${err.message}`);
     }
 });
+
 
 // Delete Repair Product
 router.delete('/deleteProduct', async (req, res) => {

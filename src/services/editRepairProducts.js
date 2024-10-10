@@ -1,32 +1,32 @@
-function editProductBtnClick(event){
+function editRepairProductBtnClick(event){
     
     const button = event.target.closest('button');
     const productId = button.getAttribute('data-id');
     const prodID = parseInt(productId);
-    var modal = document.getElementById('editProductModal');
+    var modal = document.getElementById('editRepairProductModal');
     if (modal) {
         // Show the modal
         modal.style.display = 'block';
         modal.setAttribute('aria-hidden', 'false');
     }
 
+
     fetch(`/repair/getProductById?product_id=${prodID}`, {
         method: 'GET'
     })
     .then(response => response.json())
     .then(product => {
-        console.log(product);
         if (product) {
             // Populate the modal fields with the fetched product data
-            document.querySelector('#editProductModal [name="productName"]').value = product.product_name || '';
-            document.querySelector('#editProductModal [name="productPrice"]').value = product.product_price || '';
-            document.querySelector('#editProductModal [name="productShortDesc"]').value = product.short_description || '';
-            document.querySelector('#editProductModal [name="productDesc"]').value = product.full_description || '';
-            document.querySelector('#editProductModal [name="category"]').value = product.category_name || '';
-            document.querySelector('#editProductModal [name="category"]').setAttribute('data-category-id', product.category_id || '');
-            document.querySelector('#editProductModal [name="productPicName"]').value = product.picture_name || '';
-            document.querySelector('#editProductModal [name="pictureURL"]').value = product.picture_data || '';
-            document.querySelector('#editProductModal [name="productId"]').value = product.product_id || '';
+            document.querySelector('#editRepairProductModal [name="productName"]').value = product.product_name || '';
+            document.querySelector('#editRepairProductModal [name="productPrice"]').value = product.product_price || '';
+            document.querySelector('#editRepairProductModal [name="productShortDesc"]').value = product.short_description || '';
+            document.querySelector('#editRepairProductModal [name="productDesc"]').value = product.full_description || '';
+            document.querySelector('#editRepairProductModal [name="category"]').value = product.category_name || '';
+            document.querySelector('#editRepairProductModal [name="category"]').setAttribute('data-category-id', product.category_id || '');
+            document.querySelector('#editRepairProductModal [name="productPicName"]').value = product.picture_name || '';
+            document.querySelector('#editRepairProductModal [name="pictureURL"]').value = product.picture_data || '';
+            document.querySelector('#editRepairProductModal [name="productId"]').value = product.product_id || '';
         }
     })
     .catch((error) => {
@@ -37,7 +37,7 @@ function editProductBtnClick(event){
         modal.setAttribute('aria-hidden', 'true');
     }); 
     //Submit
-    document.querySelector('#editProductForm').addEventListener('submit', function(event) {
+    document.querySelector('#editRepairProductForm').addEventListener('submit', function(event) {
         event.preventDefault();
         const productData = {
             p_product_name: this.productName.value,
@@ -60,7 +60,7 @@ function editProductBtnClick(event){
         .then(data => {
             modal.style.display = 'none';
             modal.setAttribute('aria-hidden', 'true');
-            fetchProductData();            
+            fetchRepairProductData();         
         })
         .catch((error) => {
             console.error('Error:', error);

@@ -23,7 +23,7 @@ function fetchRepairProductData() {
 
              // Attach event listeners to dynamically added buttons
              document.querySelectorAll('.edit-product-btn').forEach(button => {
-                button.addEventListener('click', editProductBtnClick);
+                button.addEventListener('click', editRepairProductBtnClick);
             });
 
             document.querySelectorAll('.delete-Product-btn').forEach(button => {

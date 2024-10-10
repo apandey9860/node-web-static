@@ -87,7 +87,7 @@ CREATE OR REPLACE PROCEDURE REPAIR.update_repair_product(
     IN p_category_id INT,
     IN p_prod_pic_name VARCHAR(200),
     IN p_prod_pic_data VARCHAR(100),
-    IN p_repair_status BOOLEAN
+    -- IN p_repair_status BOOLEAN
 )
 LANGUAGE plpgsql
 AS $$
@@ -98,7 +98,7 @@ BEGIN
         R_PRODUCT_SHORT_DESC = p_product_short_desc,
         R_PRODUCT_DESC = p_product_desc,
         R_CATEGORY_ID = p_category_id,
-        R_REPAIR_STATUS = p_repair_status,
+        -- R_REPAIR_STATUS = p_repair_status,
         LAST_UPDATED_DATE = CURRENT_TIMESTAMP
     WHERE R_PRODUCT_ID = p_product_id;
 
@@ -112,8 +112,8 @@ END;
 $$;
 
 -- Test Case
-CALL REPAIR.update_repair_product(5, 'Updated Laptop Repair', '140', 'Updated repair details', 'Repairing screen, battery, and keyboard', 2, 'updated_laptop_repair.jpg', 'updated_laptop_repair.jpg'), TRUE);
-
+-- CALL REPAIR.update_repair_product(5, 'Updated Laptop Repair', '140', 'Updated repair details', 'Repairing screen, battery, and keyboard', 2, 'updated_laptop_repair.jpg', 'updated_laptop_repair.jpg'), TRUE);
+CALL REPAIR.update_repair_product(5, 'Updated Laptop Repair', '140', 'Updated repair details', 'Repairing screen, battery, and keyboard', 2, 'updated_laptop_repair.jpg', 'updated_laptop_repair.jpg');
 
 CREATE OR REPLACE PROCEDURE REPAIR.delete_repair_product(
     IN p_product_id INT
