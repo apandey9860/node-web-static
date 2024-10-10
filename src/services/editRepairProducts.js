@@ -32,7 +32,7 @@ function editRepairProductBtnClick(event){
     .catch((error) => {
         console.error('Error fetching product:', error);
     });
-    document.getElementById("cancelTradeEdit").addEventListener('click', function(event){
+    document.getElementById("cancelRepairTradeEdit").addEventListener('click', function(event){
         modal.style.display = 'none';
         modal.setAttribute('aria-hidden', 'true');
     }); 
