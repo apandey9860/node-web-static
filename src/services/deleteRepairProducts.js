@@ -30,7 +30,7 @@ function deleteRepairProductBtnClick(){
                 modal.style.display = 'none';
                 modal.setAttribute('aria-hidden', 'true');
             }
-            fetchProductData();
+            fetchRepairProductData();
         })
         .catch((error) => {
             console.error('Error:', error);
