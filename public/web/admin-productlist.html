@@ -103,8 +103,7 @@
             <a href="#products" class="dropdown-btn">Customers </a>
             <ul class="dropdown-content">
                 <li><a href="#">Product 1</a></li>
-                <li><a href="#">Product 2</a></li>
-                
+                <li><a href="#">Product 2</a></li>             
             </ul>
         </li>
         
@@ -118,7 +117,6 @@
         </div>
     </div>
     
-
 <div class = "main-section">
     <div class = "header" id ="myHeader">
         <div class = "top-bar-text">
@@ -139,10 +137,7 @@
                 <p style="padding: 0px; margin: 0; text-align: center; color: rgb(180, 178, 178);">Search..</p>
 
             </div>
-
-        </div>
-        
-        
+        </div>           
     </div>
     <div class ="product-list">
         <div class = "top-page-top">
@@ -157,23 +152,20 @@
             <a href ="#" style="text-decoration: none;margin: 0; padding-top: 5px;">
                 <div class = "this-month">
                     <p style="margin:0px; color: black;">this month ▼</p>
-
                 </div>
             </a>
         </div>
 
         </div>
         <div class="toppage-topic">
-        <table class = "custom-table">
-            <tr style="height: 60px; text-align: start;">
-                <th style="width:120px;text-align: start;">  Product image</th>
+        <!-- <table class = "custom-table">
+            <thead style="height: 60px; text-align: start;">
+                <th style="width:120px;text-align: start;">Product image</th>
                 <th style="width:120px;text-align: start;">Product Name</th>
                 <th style="width:100px;text-align: start;">Price</th>
                 <th style="width:110px;text-align: start;">Stock</th>
-                <th style="width:170px;text-align: start;">Action</th>
-                
-                
-            </tr>
+                <th style="width:170px;text-align: start;">Action</th>          
+        </thead>
             <tr><td> item IAMGE</td>
                 <td>Speaker</td>
                 <td>100$</td>
@@ -202,9 +194,24 @@
 
                 
             </tr>
+            </table> -->
             
-            
+            <!-- New table implementation -->
+            <table class="custom-table">
+                <thead style="height: 60px; text-align: start;">
+                    <th style="width:120px;text-align: start;">Select</th>
+                    <th style="width:120px;text-align: start;">Product Name</th>
+                    <th style="width:100px;text-align: start;">Description</th>
+                    <th style="width:120px;text-align: start;">Image</th>
+                    <th style="width:100px;text-align: start;">Category</th>
+                    <th style="width:170px;text-align: start;">Action</th>          
+                </thead>
+                <tbody id="productTableBody">
+                    <!-- Rows will be dynamically added here -->
+                </tbody>
             </table>
+            
+
             <div>
 
             </div>
@@ -216,13 +223,9 @@
                           <li class="page-item"><a class="page-link" href="#">2</a></li>
                           <li class="page-item"><a class="page-link" href="#">3</a></li>
                           <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                     </ul>
-                
-           </div>
-           
-        </div>
-        
-            
+                     </ul>               
+           </div>       
+        </div>        
         </div>    
         <br>
         <br>
@@ -231,3 +234,5 @@
     </div>
 </div>
 </body>
+<script src="components/displayTradeProducts.js"></script>
+</html>

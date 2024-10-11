@@ -35,4 +35,4 @@ function fetchProductData() {
 }
 
 // Call fetchProductData initially to populate the table
-// fetchProductData();
+fetchProductData();
