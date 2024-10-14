@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href ="./css/sidebar.css">
-    <link rel = "stylesheet" href = "./css/header-admin.css">
-    <link rel = "stylesheet" href = "./css/admin.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/header-admin.css">
+    <link rel="stylesheet" href="./css/admin.css">
     <title>admin</title>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.dropdown-btn').forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     this.classList.toggle('active');
                     const dropdownContent = this.nextElementSibling;
                     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
@@ -17,148 +18,59 @@
             });
         });
     </script>
-    
+
 </head>
-<body class = "admin-body">
-    <div class="sidebar">
-        <div class="side-header">EERO</div>
-        <div class ="Dashboard">
-        <a href="/adminpage" class = "side-font">Dashboard</a>
-    </div>
-        <ul class="menu">
-                
-            <a  class ="side-topic">Sales</a> 
-            <li>
-                <a href="#products" class="dropdown-btn">Products </a>
-                <ul class="dropdown-content">
-                    <li><a href="/adminproductlist">List</a></li>
-                    <li><a href="/productdetails">Details</a></li>
-                    <li><a href="/createproduct">Create</a></li>
-                    <li><a href="/adminedit">Edit</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#category" class="dropdown-btn">Category </a>
-                <ul class="dropdown-content">
-                    <li><a href="/pcategorylist">List</a></li>
-                    <li><a href="/pcategorycreate">Create</a></li>
-                    <li><a href="/pcategoryedit">Edit</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#orders" class="dropdown-btn">Orders </a>
-                <ul class="dropdown-content">
-                    <li><a href="/porderlist">List</a></li>
-                    <li><a href="/orderdetail">Details</a></li>
-                    <li><a href="/ordercart"> cart</a></li>
-                    <li><a href="/ordercheckout">Checkout</a></li>
 
-                </ul>
-            </li>
-            <li>
-                <a href="#inventory" class="dropdown-btn">Inventory </a>
-                <ul class="dropdown-content">
-                    <li><a href="/inventory">Product Inventory</a></li>
-                    <li><a href="/recievedorders">Recieved Orders</a></li>
-                    
-                </ul>
-            </li>
-            <a class = "side-topic" >Repairs</a>
-            <li>
-                <a href="#products" class="dropdown-btn">Products </a>
-                <ul class="dropdown-content">
-                    <li><a href="/adminproductlist">List</a></li>
-                    <li><a href="/productdetails">Details</a></li>
-                    <li><a href="/createproduct">Create</a></li>
-                    <li><a href="/adminedit">Edit</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#category" class="dropdown-btn">Category </a>
-                <ul class="dropdown-content">
-                    <li><a href="/pcategorylist">List</a></li>
-                    <li><a href="/pcategorycreate">Create</a></li>
-                    <li><a href="/pcategoryedit">Edit</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#orders" class="dropdown-btn">Orders </a>
-                <ul class="dropdown-content">
-                    <li><a href="/porderlist">List</a></li>
-                    <li><a href="/orderdetail">Details</a></li>
-                    <li><a href="/ordercart"> cart</a></li>
-                    <li><a href="/ordercheckout">Checkout</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#inventory" class="dropdown-btn">Inventory </a>
-                <ul class="dropdown-content">
-                    <li><a href="/inventory">Product Inventory</a></li>
-                    <li><a href="/recievedorders">Recieved Orders</a></li>
-                </ul>
-            </li>
-        
-        <a class="side-topic">Others</a>
-        <li>
-            <a href="#products" class="dropdown-btn">Customers </a>
-            <ul class="dropdown-content">
-                <li><a href="#">Product 1</a></li>
-                <li><a href="#">Product 2</a></li>             
-            </ul>
-        </li>
-        
-        </ul>
-        <div class ="Dashboard">
-            <a href="chat" class="side-font">Chat</a>
-        </div>
-        
-        <div class ="Dashboard">
-            <a href="chat" class="side-font">Calendar</a>
-        </div>
-    </div>
-    
-<div class = "main-section">
-    <div class = "header" id ="myHeader">
-        <div class = "top-bar-text">
-            <p style="font-family: 'Roboto', sans-serif;">Product List</p>
-        </div>
-        <div class = "top-bar-items">
-            <a href="#">
-                <img style="height: 20px; width: 20px;" src = "./images/home-page/light-mode-10979.png" alt ="night light" >
-            <a href="#">                      
-                
-                <img style="height: 25px; width: 25px;" src= "./images/home-page/notification.svg" alt = " notification" href ="#">
-            </a>  
-            <a href = "#">
-                    <img style="height: 35px; width: 35px;" src= "./images/home-page/circle-png-182.png" alt = " profile" href = "#">
-            </a>
-            <div class = "header-admin-search">
-                <img src ="./images/home-page/search-286-32.png">
-                <p style="padding: 0px; margin: 0; text-align: center; color: rgb(180, 178, 178);">Search..</p>
+<body class="admin-body">
+    <!-- Sidebar will be dynamically injected here -->
 
+    <div class="main-section">
+        <div class="header" id="myHeader">
+            <div class="top-bar-text">
+                <p style="font-family: 'Roboto', sans-serif;">Product List</p>
             </div>
-        </div>           
-    </div>
-    <div class ="product-list">
-        <div class = "top-page-top">
-                <p style="margin-left: 20px; font-size:18px; font-family: 'Roboto', sans-serif; color: rgb(90, 88, 86);"> Product List</p>
-        <div class="productlist-align">
-                <a href="#" style="text-decoration: none;">
-            <div class ="createorder-button">
-                <p style="margin: 0; padding:0; color:rgb(253, 80, 17);"> Create order</p>
+            <div class="top-bar-items">
+                <a href="#">
+                    <img style="height: 20px; width: 20px;" src="./images/home-page/light-mode-10979.png"
+                        alt="night light">
+                    <a href="#">
+
+                        <img style="height: 25px; width: 25px;" src="./images/home-page/notification.svg"
+                            alt=" notification" href="#">
+                    </a>
+                    <a href="#">
+                        <img style="height: 35px; width: 35px;" src="./images/home-page/circle-png-182.png"
+                            alt=" profile" href="#">
+                    </a>
+                    <div class="header-admin-search">
+                        <img src="./images/home-page/search-286-32.png">
+                        <p style="padding: 0px; margin: 0; text-align: center; color: rgb(180, 178, 178);">Search..</p>
+
+                    </div>
             </div>
-            
-        </a>
-            <a href ="#" style="text-decoration: none;margin: 0; padding-top: 5px;">
-                <div class = "this-month">
-                    <p style="margin:0px; color: black;">this month ▼</p>
+        </div>
+        <div class="product-list">
+            <div class="top-page-top">
+                <p
+                    style="margin-left: 20px; font-size:18px; font-family: 'Roboto', sans-serif; color: rgb(90, 88, 86);">
+                    Product List</p>
+                <div class="productlist-align">
+                    <a href="#" style="text-decoration: none;">
+                        <div class="createorder-button">
+                            <p style="margin: 0; padding:0; color:rgb(253, 80, 17);"> Create order</p>
+                        </div>
+
+                    </a>
+                    <a href="#" style="text-decoration: none;margin: 0; padding-top: 5px;">
+                        <div class="this-month">
+                            <p style="margin:0px; color: black;">this month ▼</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
 
-        </div>
-        <div class="toppage-topic">
-        <!-- <table class = "custom-table">
+            </div>
+            <div class="toppage-topic">
+                <!-- <table class = "custom-table">
             <thead style="height: 60px; text-align: start;">
                 <th style="width:120px;text-align: start;">Product image</th>
                 <th style="width:120px;text-align: start;">Product Name</th>
@@ -195,44 +107,43 @@
                 
             </tr>
             </table> -->
-            
-            <!-- New table implementation -->
-            <table class="custom-table">
-                <thead style="height: 60px; text-align: start;">
-                    <th style="width:120px;text-align: start;">Select</th>
-                    <th style="width:120px;text-align: start;">Product Name</th>
-                    <th style="width:100px;text-align: start;">Description</th>
-                    <th style="width:120px;text-align: start;">Image</th>
-                    <th style="width:100px;text-align: start;">Category</th>
-                    <th style="width:170px;text-align: start;">Action</th>          
-                </thead>
-                <tbody id="productTableBody">
-                    <!-- Rows will be dynamically added here -->
-                </tbody>
-            </table>
-            
 
-            <div>
+                <!-- New table implementation -->
+                <table class="custom-table">
+                    <thead style="height: 60px; text-align: start;">
+                        <th style="width:120px;text-align: start;">Select</th>
+                        <th style="width:120px;text-align: start;">Product Name</th>
+                        <th style="width:100px;text-align: start;">Description</th>
+                        <th style="width:120px;text-align: start;">Image</th>
+                        <th style="width:100px;text-align: start;">Category</th>
+                        <th style="width:170px;text-align: start;">Action</th>
+                    </thead>
+                    <tbody id="productTableBody">
+                        <!-- Rows will be dynamically added here -->
+                    </tbody>
+                </table>
+                <div>
+                </div>
+                <div class="card-footer border-top">
 
+                    <ul class="pagination justify-content-end mb-0">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card-footer border-top">
-                
-                     <ul class="pagination justify-content-end mb-0">
-                          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                     </ul>               
-           </div>       
-        </div>        
-        </div>    
+        </div>
         <br>
         <br>
-    <div class ="footer">
-        <p>Copyright EERO @ all righrs reserved</p>
+        <div class="footer">
+            <p>Copyright EERO @ all righrs reserved</p>
+        </div>
     </div>
-</div>
 </body>
 <script src="components/displayTradeProducts.js"></script>
+<script src="components/adminLeftNavbar.js"></script>
+
 </html>
