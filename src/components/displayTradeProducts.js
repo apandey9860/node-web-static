@@ -15,10 +15,10 @@ function fetchProductData() {
 
                     <td>
                        <button id="editProductBtn" class="edit-product-btn" data-toggle="modal" data-id="${product.product_id}">
-                       <img src="./images/home-page/edit.png" style="width:20px;height:20px;">
+                       <img src="./images/home-page/edit.png" class="icon-image">
                        </button>
                        <button id="deleteProductBtn" class="delete-product-btn" data-toggle="modal" data-id="${product.product_id}">
-                       <img src="./images/home-page/delete.png" style="width:20px;height:20px;">
+                       <img src="./images/home-page/delete.png" class="icon-image">
                        </button>
                     </td>
                 `;

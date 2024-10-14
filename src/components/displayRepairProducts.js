@@ -14,8 +14,12 @@ function fetchRepairProductData() {
                     <td><img src="../${product.picture_data}" alt="${product.product_name}" style="width: 50px;"></td>
                     <td>${product.category_name}</td>
                     <td>
-                        <button id="editProductBtn" class="edit-product-btn" data-toggle="modal" data-id="${product.product_id}"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
-                        <button id="deleteProductBtn" class="delete-Product-btn" data-toggle="modal" data-id="${product.product_id}"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>
+                       <button id="editProductBtn" class="edit-product-btn" data-toggle="modal" data-id="${product.product_id}">
+                       <img src="./images/home-page/edit.png" class="icon-image">
+                       </button>
+                       <button id="deleteProductBtn" class="delete-product-btn" data-toggle="modal" data-id="${product.product_id}">
+                       <img src="./images/home-page/delete.png" class="icon-image">
+                       </button>
                     </td>
                 `;
                 tbody.appendChild(row);
