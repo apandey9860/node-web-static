@@ -1468,3 +1468,17 @@ h2 {
 
 }
 
+.edit-product-btn, .delete-product-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+    margin-right: 10px;
+}
+
+.edit-product-btn:active, .delete-product-btn:active {
+    transform: scale(0.95); /* Slightly scale down on click */
+    opacity: 0.7;          /* Decrease opacity on click */
+}
+
