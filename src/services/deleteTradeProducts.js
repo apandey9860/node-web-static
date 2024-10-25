@@ -1,4 +1,4 @@
-function deleteProductBtnClick(){
+function deleteProductBtnClick(event){
     const button = event.target.closest('button');
     const productId = button.getAttribute('data-id');
     const prodID = parseInt(productId);
@@ -14,7 +14,6 @@ function deleteProductBtnClick(){
     }
     document.querySelector('#deleteProductForm').addEventListener('submit', function(event) {
         event.preventDefault();
-
         fetch(`/trade/deleteProduct`, {
             method: 'DELETE',
             headers: {

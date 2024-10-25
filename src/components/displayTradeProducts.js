@@ -31,7 +31,10 @@ function fetchProductData() {
       });
 
       document.querySelectorAll(".delete-product-btn").forEach((button) => {
-        button.addEventListener("click", deleteProductBtnClick);
+        button.addEventListener("click", function(event){
+          deleteProductBtnClick(event);
+        });
+        // console.log("Click delete Product After");
       });
     })
     .catch((error) => {
