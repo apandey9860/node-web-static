@@ -152,3 +152,12 @@ body{
 .card-text{
     font-size: 14px;
 }
+.primary{
+    color:rgb(255, 102,0)
+  }
+  .secondary{
+    color:rgb(253,252,251)
+  }
+  .wow h1{
+    text-align: center;
+  }

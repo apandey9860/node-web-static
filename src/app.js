@@ -182,7 +182,9 @@ app.get('/rordercart', (req, res) => {
 app.get('/rordercheckout', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/rorder-checkout.html'));
 });
-
+app.get('/services-alt', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/services-alt.html'));
+});
 // Handle dynamic product pages
 app.get('/product/*', (req, res) => {
   // const productID = req.params.productID;
