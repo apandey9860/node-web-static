@@ -192,7 +192,7 @@ app.get('/mobilerepair', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/mobilerepair.html'));
 });
 app.get('/electronicsrepair', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/mobilerepair.html'));
+  res.sendFile(path.join(__dirname, '../public/web/electronicsrepair.html'));
 });
 app.get('/camerarepair', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/camerarepair.html'));
