@@ -698,5 +698,80 @@
     height: 40px;
     background-color: #fa7a43;
   }
-  
+  .repair-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin:20px;
+    gap:10px;
+    margin-bottom:30px;
+  }
+  .repair-form h1{
+    margin-bottom: 30px;
+  }
+  .repairform{
+    width: 600px;
+    height: auto;
+      display: flex;
+      flex-direction: column;
+      /* gap:10px; */
+      border:1px solid gray;
+      padding:10px; 
+      padding-left: 50px;
+      
+  }
+  .repairform h1{
+    font-size: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .repairform label{
+    padding-bottom:5px;
+    color:black;
+  }
+  .repairform input{
+    margin-bottom:10px;
+    width: 400px;
+    height: 40px;
+    background-color: #ECECEC;
+    border:1px solid rgb(118, 118, 118);
+  }
+  .repairform textarea{
+    margin-bottom: 10px;
+    height: 90px;
+    width: 400px;
+    background-color: #ECECEC;
+
+  }
+  input[type="file"] {
+    height: 40px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor:default;
+}
+#file-upload-button{
+    height:50px;
+}
+.r-submit{
+    width: 80px !important;
+    height: 40px;
+    background-color:#ff6600 !important;
+    border:0px solid gray;
+    box-shadow: 0 1 1 0;
+    border-radius: 10px;
+    color: white;
+
+}
+.filter {
+    position: sticky;
+    top: 10px; /* Adjust the distance from the top of the viewport */
+    z-index: 10; /* Ensure it stays above other content if needed */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 /*** Footer End ***/

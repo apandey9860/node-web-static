@@ -185,6 +185,18 @@ app.get('/rordercheckout', (req, res) => {
 app.get('/services-alt', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/services-alt.html'));
 });
+app.get('/laptoprepair', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/laptoprepair.html'));
+});
+app.get('/mobilerepair', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/mobilerepair.html'));
+});
+app.get('/electronicsrepair', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/mobilerepair.html'));
+});
+app.get('/camerarepair', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/camerarepair.html'));
+});
 // Handle dynamic product pages
 app.get('/product/*', (req, res) => {
   // const productID = req.params.productID;
