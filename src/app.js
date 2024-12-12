@@ -197,6 +197,11 @@ app.get('/electronicsrepair', (req, res) => {
 app.get('/camerarepair', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/camerarepair.html'));
 });
+//product alt
+app.get('/productsalt', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/products-alt.html'));
+});
+
 // Handle dynamic product pages
 app.get('/product/*', (req, res) => {
   // const productID = req.params.productID;
