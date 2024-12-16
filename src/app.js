@@ -60,8 +60,8 @@ app.use('/utils', express.static(path.join(__dirname, '../src/utils')));
 app.get('/products', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/products.html'));
 });
-app.get('/services', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/services.html'));
+app.get('/repairs', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/repairs.html'));
 });
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/login.html'));
@@ -70,7 +70,7 @@ app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/register.html'));
 });
 app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/admin.html'));
+  res.sendFile(path.join(__dirname, '../public/web/admin-page.html'));
 });
 app.get('/product_repair', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/product_repair.html'));
@@ -79,7 +79,7 @@ app.get('/trade_procedure', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/trade_procedure.html'));
 });
 app.get('/home', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/header2.html'));
+  res.sendFile(path.join(__dirname, '../public/web/home.html'));
 });
 // admin page/dashboard
 app.get('/adminpage', (req, res) => {
@@ -226,7 +226,7 @@ app.use('/repair', repairRouter);
 
 // Fallback route (optional)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/index.html'));
+  res.sendFile(path.join(__dirname, '../public/web/home.html'));
 });
 
 module.exports = app;
