@@ -47,7 +47,8 @@ app.use('/fonts', express.static(path.join(__dirname, '../public/fonts')));
 app.use('/css', express.static(path.join(__dirname, '../public/css')));
 app.use('/images', express.static(path.join(__dirname, '../public/images')));
 app.use('/videos', express.static(path.join(__dirname, '../public/videos')));
-app.use('/videos', express.static(path.join(__dirname, '../public/viwes')));
+app.use('/videos', express.static(path.join(__dirname, '../public/views')));
+app.use('/js', express.static(path.join(__dirname, '../public/js')));
 
 // Serve static JS files from a specific directory
 app.use('/scripts', express.static(path.join(__dirname, '../src')));
@@ -185,8 +186,8 @@ app.get('/rordercheckout', (req, res) => {
 app.get('/services-alt', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/services-alt.html'));
 });
-app.get('/laptoprepair', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/web/laptoprepair.html'));
+app.get('/repairForm', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/repairForm.html'));
 });
 app.get('/mobilerepair', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/mobilerepair.html'));
