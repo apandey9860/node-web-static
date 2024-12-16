@@ -1,5 +1,5 @@
 {
-    "name": "my-node-app",
+    "name": "eero-node-app",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
