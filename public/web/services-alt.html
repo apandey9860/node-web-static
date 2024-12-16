@@ -52,10 +52,10 @@
                     <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
                             
-                            <a href="index.html" class="nav-item nav-link active text-secondary">Home</a>
+                            <a href="homealt" class="nav-item nav-link active text-secondary">Home</a>
                             <a href="about.html" class="nav-item nav-link">Features</a>
-                            <a href="service.html" class="nav-item nav-link">Products</a>
-                            <a href="project.html" class="nav-item nav-link">Services</a>
+                            <a href="productsalt" class="nav-item nav-link">Products</a>
+                            <a href="services-alt" class="nav-item nav-link">Repairs</a>
                             <a href="aboutus.html" class="nav-item nav-link">About us</a>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
@@ -126,9 +126,9 @@
                                     <div class="p-4 text-center services-content">
                                         <div class="services-content-icon">
                                             <i class="fa fa-laptop fa-7x mb-4 text-service"></i>
-                                            <h4 class="mb-3">Laptop Repair</h4>
+                                            <h4 class="mb-3 value" >Laptop Repair</h4>
                                             <p class="mb-4">Fixing laptop hardware and software issues.</p>
-                                            <a href="/laptoprepair" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Book now</a>
+                                            <a href="/laptoprepair" class="btn btn-secondary text-white px-5 py-3 rounded-pill" onclick="repaircall(event)">Book now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -313,6 +313,8 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <Script src="/src/services/repair.js"></Script>
+        
     </body>
 
 </html>

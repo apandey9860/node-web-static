@@ -201,6 +201,9 @@ app.get('/camerarepair', (req, res) => {
 app.get('/productsalt', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/web/products-alt.html'));
 });
+app.get('/homealt', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/web/home-alt.html'));
+});
 
 // Handle dynamic product pages
 app.get('/product/*', (req, res) => {

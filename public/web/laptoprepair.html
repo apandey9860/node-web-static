@@ -85,7 +85,7 @@
        <!-- Form start -->
         
             <div class="repair-form">
-                <h1 class="text-secondary">Laptop Repair</h1>
+                <h1 class="text-secondary" id="output"></h1>
                     <form class="repairform">
                         <h1>Repair Form</h1>
                         <label>Phone Number</label>
@@ -174,6 +174,18 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="/src/services/repair.js"></script>
+        <script>
+            function getQueryParam(name) {
+                const params = new URLSearchParams(window.location.search);
+                return params.get(name);
+            }
+    
+            const value = getQueryParam("value");
+            if (value) {
+                document.getElementById("output").textContent = value;
+            }
+        </script>
     </body>
 
 </html>
